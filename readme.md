@@ -5,6 +5,11 @@
 3. After migrating from bash to zsh with all the installs. You have to write ". ~/z.sh" so it would work with all the commands after that. 
 
 
+# Lazy Nvim Problem
+The keymaps were not working with leader key and so I looked into the lazy Nvim
+repository to realize that you have to set the leader key before you load your
+lazy nvim command, so yeah that was what was disabling the keys. 
+
 
 ## LuaSnip Problems
 
