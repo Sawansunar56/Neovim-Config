@@ -7,7 +7,13 @@ function Colors(color)
         color = "tokyonight-moon"
     elseif(color == "rs") then
         color = "rose-pine"
-    else 
+    elseif(color == "cf") then
+        color = "catppuccin-frappe"
+    elseif(color == "cm") then
+        color = "catppuccin-macchiato"
+    elseif(color == "co") then
+        color = "catppuccin-mocha"
+    else
         color = "rose-pine"
     end
 	vim.cmd.colorscheme(color)

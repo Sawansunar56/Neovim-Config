@@ -27,19 +27,7 @@ local t = ls.text_node
 
 -- local date = function() return {os.date('%Y-%m-%d')} end
 
-ls.add_snippets("cpp", {
-    s("mn", fmt([[
-        #include<iostream>
-
-        using namespace std;
-
-        int main() {{
-            return 0;
-        }}
-    ]], {}
-    )),
-})
-
+require("luasnip.loaders.from_lua").load({ paths = "~/.dotfiles/nvim/snippets/" })
 
 vim.keymap.set({ "i", "s" }, "<c-k", function()
     if ls.expand_or_jumpable() then

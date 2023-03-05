@@ -1,3 +1,3 @@
-require("sawan.packer")
+require("sawan.plugins")
 require("sawan.remap")
 require("sawan.set")
