@@ -1,3 +1,7 @@
+require('rose-pine').setup({
+    disable_background = true
+})
+
 function Colors(color)
     if(color == "tkn") then
         color = "tokyonight-night"

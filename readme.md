@@ -50,4 +50,31 @@ You can directly make it work by adding a lua snip in the after plugin directory
 6. Works with y as well as visual mode 
 7. Vi(
 8. Cib/ciB - change text current set of parenthesis or braces
+9. 100i0<enter><esc>vggg<C-a> - 100i0 makes a 100 rows with 0 in it, enter and esc is required
+vgg enters into visual mode and then jumps to the top, g<c-a> increments them all. 
 
+
+### Diagnostics not showing up problem 
+```
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
+```
+As you are using lsp zero and virtual text are false by default 
+
+# Colors changing after server is up
+you have to change the settings inside lsp to not mess up treesitter Colors
+```
+lspconfig.<name>.setup({
+  on_attach  = function(client) 
+    ...
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+  ...
+})
+```

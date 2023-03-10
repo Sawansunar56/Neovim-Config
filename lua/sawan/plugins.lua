@@ -21,7 +21,7 @@ local plugins = {
     {
         'rose-pine/neovim',
         name  = 'rose-pine',
-        lazy = false,
+        lazy = true,
         config = function()
             require("rose-pine").setup()
             vim.cmd('colorscheme rose-pine')
@@ -40,6 +40,13 @@ local plugins = {
         ('theprimeagen/harpoon'),
         ('mbbill/undotree'),
         ('tpope/vim-fugitive'),
+        {'folke/trouble.nvim',
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            config = function()
+                require("trouble").setup {
+                }
+            end
+        },
         {
             'VonHeikemen/lsp-zero.nvim',
             branch = 'v1.x',
