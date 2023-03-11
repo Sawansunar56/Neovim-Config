@@ -27,6 +27,9 @@ local plugins = {
             vim.cmd('colorscheme rose-pine')
         end
     },
+    ('jose-elias-alvarez/null-ls.nvim'),
+    { 'numToStr/Comment.nvim', opts = {} },
+
         { "catppuccin/nvim", name = "catppuccin" },
         ('christoomey/vim-tmux-navigator'),
         'folke/tokyonight.nvim',
