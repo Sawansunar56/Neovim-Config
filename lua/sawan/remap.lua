@@ -1,8 +1,13 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set({"n", "v"}, "<leader>+", "<C-a>")
-vim.keymap.set({"n", "v"}, "<leader><leader>+", "g<C-a>")
 
+-- For increments and decrements  in numbers
+vim.keymap.set({"n", "v"}, "+", "<C-a>")
+vim.keymap.set({"n", "v"}, "<leader>+", "g<C-a>")
+vim.keymap.set({"n", "v"}, "-", "<C-x>")
+vim.keymap.set({"n", "v"}, "<leader>-", "g<C-x>")
+
+-- moving lines above and below in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -34,20 +39,27 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+-- Things I don't understand
 vim.keymap.set("n", "<leader>ck", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>cj", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>sv", "<C-w>v")
-vim.keymap.set("n", "<leader>sh", "<C-w>h")
-vim.keymap.set("n", "<leader>se", "<C-w>=")
-vim.keymap.set("n", "<leader>sx", ":close<CR>")
 
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>")
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>")
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
+-- Everything window related
+vim.keymap.set("n", "sv", "<C-w>v") -- vertically splits the screen
+vim.keymap.set("n", "sh", "<C-w>s") -- horizontally splits the screen
+vim.keymap.set("n", "se", "<C-w>=") -- equals the area of the splits
+vim.keymap.set("n", "sx", ":close<CR>") -- closes the split
+vim.keymap.set("n", "<C-w><left>", "<C-w><")
+vim.keymap.set("n", "<C-w><right>", "<C-w>>")
+vim.keymap.set("n", "<C-w><up>", "<C-w>+")
+vim.keymap.set("n", "<C-w><down>", "<C-w>-")
+
+vim.keymap.set("n", "to", ":tabnew<CR>")
+vim.keymap.set("n", "tx", ":tabclose<CR>")
+vim.keymap.set("n", "tn", ":tabn<CR>")
+vim.keymap.set("n", "tp", ":tabp<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

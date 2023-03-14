@@ -17,6 +17,8 @@ function Colors(color)
         color = "catppuccin-macchiato"
     elseif(color == "co") then
         color = "catppuccin-mocha"
+    elseif(color == "g") then
+        color = "gruvbox"
     else
         color = "rose-pine"
     end

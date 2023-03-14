@@ -52,6 +52,10 @@ You can directly make it work by adding a lua snip in the after plugin directory
 8. Cib/ciB - change text current set of parenthesis or braces
 9. 100i0<enter><esc>vggg<C-a> - 100i0 makes a 100 rows with 0 in it, enter and esc is required
 vgg enters into visual mode and then jumps to the top, g<c-a> increments them all. 
+10. d/c/y + t/f/F/T + character (dt') - This command deletes/copies until the certain
+character. t and f are the searching commands so f is includes the character 
+and t is excludes the character. You can also add a number after d
+to go forward after the first instances. 
 
 
 ### Diagnostics not showing up problem 
