@@ -51,6 +51,10 @@ local plugins = {
         end
     },
     {
+        "glepnir/lspsaga.nvim",
+        event = "BufRead",
+    },
+    {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         dependencies = {
