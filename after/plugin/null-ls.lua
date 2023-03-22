@@ -7,6 +7,7 @@ null_ls.setup({
     sources = {
         -- formatting
         formatting.prettierd,
+        formatting.clang_format,
 
         --  diagnostics
         diagnostics.eslint

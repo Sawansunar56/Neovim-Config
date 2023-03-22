@@ -59,7 +59,7 @@ local plugins = {
         branch = 'v1.x',
         dependencies = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },               -- Required
+            { 'neovim/nvim-lspconfig'},               -- Required
             { 'williamboman/mason.nvim' },             -- Optional
             { 'williamboman/mason-lspconfig.nvim' },   -- Optional
 
