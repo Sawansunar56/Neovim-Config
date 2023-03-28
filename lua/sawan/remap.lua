@@ -2,10 +2,10 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- For increments and decrements  in numbers
-vim.keymap.set({"n", "v"}, "+", "<C-a>")
-vim.keymap.set({"n", "v"}, "<leader>+", "g<C-a>")
-vim.keymap.set({"n", "v"}, "-", "<C-x>")
-vim.keymap.set({"n", "v"}, "<leader>-", "g<C-x>")
+vim.keymap.set({ "n", "v" }, "+", "<C-a>")
+vim.keymap.set({ "n", "v" }, "<leader>+", "g<C-a>")
+vim.keymap.set({ "n", "v" }, "-", "<C-x>")
+vim.keymap.set({ "n", "v" }, "<leader>-", "g<C-x>")
 
 -- moving lines above and below in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -27,10 +27,10 @@ end)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 --vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -45,11 +45,10 @@ vim.keymap.set("n", "<leader>cj", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-
 -- Everything window related
-vim.keymap.set("n", "sv", "<C-w>v") -- vertically splits the screen
-vim.keymap.set("n", "sh", "<C-w>s") -- horizontally splits the screen
-vim.keymap.set("n", "se", "<C-w>=") -- equals the area of the splits
+vim.keymap.set("n", "sv", "<C-w>v")     -- vertically splits the screen
+vim.keymap.set("n", "sh", "<C-w>s")     -- horizontally splits the screen
+vim.keymap.set("n", "se", "<C-w>=")     -- equals the area of the splits
 vim.keymap.set("n", "sx", ":close<CR>") -- closes the split
 vim.keymap.set("n", "<C-w><left>", "<C-w><")
 vim.keymap.set("n", "<C-w><right>", "<C-w>>")

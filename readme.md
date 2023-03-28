@@ -82,3 +82,11 @@ lspconfig.<name>.setup({
   ...
 })
 ```
+
+### Clangd error with double server null ls. encoding
+Put this code inside lsp config file. 
+```
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
+```

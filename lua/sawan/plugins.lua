@@ -20,7 +20,11 @@ local plugins = {
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
     { 'nvim-lualine/lualine.nvim' },
-    ('folke/tokyonight.nvim'),
+
+    -- themes
+    {'folke/tokyonight.nvim'},
+    {'navarasu/onedark.nvim'},
+    {'Mofiqul/vscode.nvim'},
     { "ellisonleao/gruvbox.nvim" },
     { "catppuccin/nvim",          name = "catppuccin" },
     {
@@ -28,6 +32,7 @@ local plugins = {
         name   = 'rose-pine',
         lazy   = true,
     },
+
     ('jose-elias-alvarez/null-ls.nvim'),
     { 'numToStr/Comment.nvim',    opts = {} },
 
