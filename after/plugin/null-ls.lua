@@ -8,7 +8,13 @@ null_ls.setup({
         -- formatting
         formatting.prettierd,
 
+        -- runs only for markdown 
+        -- formatting.deno_fmt -- runs for all
+        formatting.deno_fmt.with({
+            filetypes={"markdown"},
+        }),
+
         --  diagnostics
-        diagnostics.eslint
+        diagnostics.eslint_d
     },
 })

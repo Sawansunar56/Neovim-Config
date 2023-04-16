@@ -40,6 +40,12 @@ You can directly make it work by adding a lua snip in the after plugin directory
 15. "C-d or u " - same as vim
 16. "C-F or B" - go full page and down.
 17. "C-c" - to get out of copy mode.
+18. "C-a Alt-1to5 " - to change the split into different positions
+            1 - even horizontal
+            2 - even vertical
+            3 - main horizontal
+            4 - main vertical
+            5 - tiled
 
 #### vim
 1. Alt j and k - to move in harpoon pages
