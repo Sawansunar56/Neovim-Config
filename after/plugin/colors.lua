@@ -1,8 +1,8 @@
 local rs = require('rose-pine')
+local od = require('onedark')
 rs.setup({
     disable_background = true
 })
-local od = require('onedark')
 
 function Colors(color)
     if (color == "tkn") then
