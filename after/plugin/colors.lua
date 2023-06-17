@@ -67,7 +67,7 @@ function Colors(color)
     elseif (color == "vs") then
         color = "vscode"
     else
-        color = "rose-pine"
+        color = "tokyonight"
     end
     vim.cmd.colorscheme(color)
 

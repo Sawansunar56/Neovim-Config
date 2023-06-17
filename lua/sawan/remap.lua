@@ -40,8 +40,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Things I don't understand
-vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<A-down>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<A-up>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>ck", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>cj", "<cmd>lprev<CR>zz")
 

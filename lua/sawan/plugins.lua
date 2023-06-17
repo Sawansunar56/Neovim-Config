@@ -19,14 +19,17 @@ local plugins = {
     -- or                            , branch = '0.1.x',
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
-  { 'nvim-lualine/lualine.nvim' },
+  {
+    'nvim-lualine/lualine.nvim',
+    event = "VeryLazy",
+  },
 
   -- themes
   { 'folke/tokyonight.nvim' },
   { 'navarasu/onedark.nvim' },
   { 'Mofiqul/vscode.nvim' },
   { "ellisonleao/gruvbox.nvim" },
-  { "catppuccin/nvim",          name = "catppuccin" },
+  { "catppuccin/nvim",         name = "catppuccin" },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
@@ -34,7 +37,7 @@ local plugins = {
   },
 
   ('jose-elias-alvarez/null-ls.nvim'),
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',   opts = {} },
 
   ('christoomey/vim-tmux-navigator'),
   {
@@ -50,6 +53,7 @@ local plugins = {
   ('mbbill/undotree'),
   ('tpope/vim-fugitive'),
   ('theprimeagen/refactoring.nvim'),
+  { 'akinsho/toggleterm.nvim', event = "VeryLazy", version = "*", config = true },
   {
     'folke/trouble.nvim',
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -57,6 +61,11 @@ local plugins = {
       require("trouble").setup {
       }
     end
+  },
+  {
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    opts = {}
   },
   {
     "glepnir/lspsaga.nvim",
