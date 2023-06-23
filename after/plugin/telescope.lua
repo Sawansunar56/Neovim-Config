@@ -11,3 +11,4 @@ vim.keymap.set('n', '<leader>ps', builtin.grep_string, {desc = "Find string from
 vim.keymap.set('n', '<leader>/', function()
   builtin.current_buffer_fuzzy_find()
 end, {})
+
