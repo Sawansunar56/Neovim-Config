@@ -15,9 +15,20 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.x',
     -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+      },
+    }
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -42,6 +53,7 @@ local plugins = {
 
   ('jose-elias-alvarez/null-ls.nvim'),
   { 'numToStr/Comment.nvim',   opts = {} },
+
 
   ('christoomey/vim-tmux-navigator'),
   {

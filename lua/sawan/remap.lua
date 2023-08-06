@@ -40,10 +40,12 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Things I don't understand
+-- Well, I finally understand. It is related to the quick list and local list 
+-- settings of vim. Prime uses it for his reference checking
 vim.keymap.set("n", "<A-down>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<A-up>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>ck", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>cj", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<A-right>", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<A-left>", "<cmd>lprev<CR>zz")
 
 -- Everything window related
 vim.keymap.set("n", "sv", "<C-w>v")     -- vertically splits the screen
@@ -55,6 +57,14 @@ vim.keymap.set("n", "<C-w><right>", "<C-w>>")
 vim.keymap.set("n", "<C-w><up>", "<C-w>+")
 vim.keymap.set("n", "<C-w><down>", "<C-w>-")
 
+-- buffer shit
+vim.keymap.set("n", "<leader>bv", ":vnew<CR>") -- closes the split
+vim.keymap.set("n", "<leader>bh", ":new<CR>") -- closes the split
+vim.keymap.set("n", "<leader>ba", ":buffers<CR>") -- closes the split
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>") -- closes the split
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>") -- closes the split
+vim.keymap.set("n", "<leader>bx", ":bdelete<CR>") -- closes the split
+
 vim.keymap.set("n", "to", ":tabnew<CR>")
 vim.keymap.set("n", "tx", ":tabclose<CR>")
 vim.keymap.set("n", "tn", ":tabn<CR>")
@@ -65,4 +75,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader><leader>c", ":lua Colors(\"\")<Left><Left>")
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/sawan/plugins.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
