@@ -9,19 +9,12 @@ lsp.ensure_installed({
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-})
+lsp.nvim_workspace()
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
+  ["<CR>"] = cmp.config.disable,
   ['<C-d>'] = cmp.mapping.scroll_docs(-4),
   ['<C-f>'] = cmp.mapping.scroll_docs(4),
   ['<C-e>'] = cmp.mapping.close(),
@@ -47,20 +40,20 @@ lsp.setup_nvim_cmp({
 lsp.on_attach(function(client, bufnr)
   client.server_capabilities.semanticTokensProvider = nil
   local opts = { buffer = bufnr, remap = false }
+  local map = vim.keymap.set
 
-  vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "<leader>ed", function() vim.lsp.buf.declaration() end, opts)
-  vim.keymap.set("n", "<leader>gI", function() vim.lsp.buf.implementation() end, opts)
-  vim.keymap.set("n", "<leader>gr", require('telescope.builtin').lsp_references, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  map("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  map("n", "<leader>ed", function() vim.lsp.buf.declaration() end, opts)
+  map("n", "<leader>gI", function() vim.lsp.buf.implementation() end, opts)
+  map("n", "K", function() vim.lsp.buf.hover() end, opts)
+  map("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  map("n", "<leader>vd", function() vim.diagnostic.setloclist() end, opts)
+  map("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+  map("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  map("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+  map("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+  map("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  map("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
   -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
   --   vim.lsp.buf.format()

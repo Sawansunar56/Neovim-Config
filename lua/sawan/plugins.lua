@@ -13,9 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  -- telescope
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.x',
+    tag = '0.1.2',
     -- or                            , branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -30,6 +31,8 @@ local plugins = {
       },
     }
   },
+
+  -- lualine
   {
     'nvim-lualine/lualine.nvim',
     event = "VeryLazy",
@@ -51,11 +54,19 @@ local plugins = {
     lazy = true,
   },
 
-  ('jose-elias-alvarez/null-ls.nvim'),
-  { 'numToStr/Comment.nvim',   opts = {} },
-
-
+  -- movement stuff
   ('christoomey/vim-tmux-navigator'),
+  ('theprimeagen/harpoon'),
+  {
+    'folke/trouble.nvim',
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("trouble").setup {
+      }
+    end
+  },
+
+  -- treesitter stuff
   {
     'nvim-treesitter/nvim-treesitter',
     build = function()
@@ -65,28 +76,32 @@ local plugins = {
   ('nvim-treesitter/nvim-treesitter-textobjects'),
   ('nvim-treesitter/nvim-treesitter-context'),
   ('nvim-treesitter/playground'),
-  ('theprimeagen/harpoon'),
+
+  -- extra
   ('mbbill/undotree'),
+
+  -- Git stuff
   ('tpope/vim-fugitive'),
+
+  -- refactoring
   ('theprimeagen/refactoring.nvim'),
+
+  -- terminal
   { 'akinsho/toggleterm.nvim', event = "VeryLazy", version = "*", config = true },
+
+  -- lsp stuff
   {
-    'folke/trouble.nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'nvimdev/lspsaga.nvim',
     config = function()
-      require("trouble").setup {
-      }
-    end
+      require('lspsaga').setup({})
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter', -- optional,
+      'nvim-tree/nvim-web-devicons'      -- optional
+    }
   },
-  {
-    "folke/edgy.nvim",
-    event = "VeryLazy",
-    opts = {}
-  },
-  {
-    "glepnir/lspsaga.nvim",
-    event = "BufRead",
-  },
+  ('jose-elias-alvarez/null-ls.nvim'),
+  { 'numToStr/Comment.nvim',   opts = {} },
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -108,7 +123,18 @@ local plugins = {
       { 'L3MON4D3/LuaSnip' },             -- Required
       { 'rafamadriz/friendly-snippets' }, -- Optional
     }
-  }
+  },
+
+  -- debugging
+  -- { 'mfussenegger/nvim-dap' },
+  -- { "rcarriga/nvim-dap-ui" },
+  -- { "leoluz/nvim-dap-go" },
+  -- { "theHamsta/nvim-dap-virtual-text" },
+  -- { "nvim-telescope/telescope-dap.nvim" },
+
+  -- neovim configuration stuff
+  { "folke/neodev.nvim",                opts = {} },
+  { "jake-stewart/jfind.nvim",          branch = "2.0" }
 }
 
 local opts = {}

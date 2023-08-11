@@ -1,6 +1,6 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the four listed parsers should always be installed)
-  ensure_installed = { "c", "javascript", "typescript", "java", "cpp", "rust", "lua", "vim", "go" },
+  ensure_installed = { "c", "javascript", "typescript", "java", "cpp", "rust", "lua", "vim", "go", "vimdoc" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -18,10 +18,10 @@ require'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<c-space>',
-      node_incremental = '<c-space>',
-      scope_incremental = '<c-1>',
-      node_decremental = '<c-backspace>',
+      init_selection = "<M-w>", -- maps in normal mode to init the node/scope selection
+      node_incremental = "<M-w>", -- increment to the upper named parent
+      node_decremental = "<M-C-w>", -- decrement to the previous node
+      scope_incremental = "<M-e>", -- increment to the upper scope (as defined in locals.scm)
     }
   },
   textobjects = {
@@ -29,32 +29,45 @@ require'nvim-treesitter.configs'.setup {
       enable = true,
       lookahead = true,
       keymaps = {
-        ['aa'] = '@paramater.outer',
-        ['ia'] = '@paramater.inner',
+        ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
         ['ac'] = '@class.outer',
         ['ic'] = '@class.inner',
+        ["ae"] = "@conditional.outer",
+        ["ie"] = "@conditional.inner",
+        ["av"] = "@variable.outer",
+        ["iv"] = "@variable.inner",
+        ["al"] = "@loop.outer",
+        ["il"] = "@loop.inner",
+        ["as"] = "@statement.outer",
+        -- ["is"] = "@scopename.inner",
+        ["ib"] = "@block.inner",
+        ["ab"] = "@block.outer",
+        --["ak"] = "@comment.outer",
       }
     },
-     move = {
+    move = {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
+        ["]p"] = "@parameter.inner",
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
       },
       goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
       },
       goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
+        ["[p"] = "@parameter.inner",
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
       },
       goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
       },
     },
   },

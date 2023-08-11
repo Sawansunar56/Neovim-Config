@@ -1,4 +1,5 @@
 require("sawan.remap")
 require("sawan.plugins")
-require("sawan.themmer")
 require("sawan.set")
+
+vim.cmd.colorscheme("rose-pine")

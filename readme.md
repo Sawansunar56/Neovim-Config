@@ -62,6 +62,8 @@ vgg enters into visual mode and then jumps to the top, g<c-a> increments them al
 character. t and f are the searching commands so f is includes the character 
 and t is excludes the character. You can also add a number after d
 to go forward after the first instances. 
+11. gf - goto filename under cursor
+12. gF - goto filename under cursor with line number *after/plugin/telescope.lua:8*
 
 
 ### Diagnostics not showing up problem 
