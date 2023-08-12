@@ -15,6 +15,15 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   -- telescope
   {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({})
+    end
+  },
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     -- or                            , branch = '0.1.x',
@@ -133,8 +142,8 @@ local plugins = {
   -- { "nvim-telescope/telescope-dap.nvim" },
 
   -- neovim configuration stuff
-  { "folke/neodev.nvim",                opts = {} },
-  { "jake-stewart/jfind.nvim",          branch = "2.0" }
+  { "folke/neodev.nvim",       opts = {} },
+  { "jake-stewart/jfind.nvim", branch = "2.0" }
 }
 
 local opts = {}
