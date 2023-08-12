@@ -18,12 +18,12 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("n", "<leader>vwm", function()
-  require("vim-with-me").StartVimWithMe()
-end)
-map("n", "<leader>svwm", function()
-  require("vim-with-me").StopVimWithMe()
-end)
+-- map("n", "<leader>vwm", function()
+--   require("vim-with-me").StartVimWithMe()
+-- end)
+-- map("n", "<leader>svwm", function()
+--   require("vim-with-me").StopVimWithMe()
+-- end)
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
@@ -39,7 +39,7 @@ map({ "n", "v" }, "<leader>d", [["_d]])
 
 map("n", "Q", "<nop>")
 map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-map("n", "<leader>f", vim.lsp.buf.format)
+map("n", "<leader>ff", vim.lsp.buf.format)
 
 -- Things I don't understand
 -- Well, I finally understand. It is related to the quick list and local list
@@ -51,10 +51,10 @@ map("n", "<A-right>", "<cmd>lnext<CR>zz")
 map("n", "<A-left>", "<cmd>lprev<CR>zz")
 
 -- Everything window related
-map("n", "sv", "<C-w>v")     -- vertically splits the screen
-map("n", "sh", "<C-w>s")     -- horizontally splits the screen
-map("n", "se", "<C-w>=")     -- equals the area of the splits
-map("n", "sx", ":close<CR>") -- closes the split
+map("n", "<Leader>sv", "<C-w>v")     -- vertically splits the screen
+map("n", "<Leader>sh", "<C-w>s")     -- horizontally splits the screen
+map("n", "<Leader>se", "<C-w>=")     -- equals the area of the splits
+map("n", "<Leader>sx", ":close<CR>") -- closes the split
 map("n", "<C-w><left>", "<C-w><")
 map("n", "<C-w><right>", "<C-w>>")
 map("n", "<C-w><up>", "<C-w>+")

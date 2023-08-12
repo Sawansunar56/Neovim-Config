@@ -38,7 +38,7 @@ map('n', '<leader>/', function()
     previewer = false,
   }, { desc = "searches only the current buffer for the string" })
 end, { desc = '[/] Fuzzily search in current buffer' })
-map('n', '<leader>sh', builtin.help_tags, { desc = "search help" });
+map('n', '<leader>ht', builtin.help_tags, { desc = "search help" });
 map('n', '<leader>bb', builtin.buffers, { desc = '[ ] Find existing buffers' })
 map('n', '<leader>ke', builtin.keymaps, { desc = 'Get all the keymaps' })
 map("n", "<Leader>cs", function()

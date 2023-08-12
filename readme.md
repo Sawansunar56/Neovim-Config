@@ -98,3 +98,15 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
 require("lspconfig").clangd.setup({ capabilities = capabilities })
 ```
+
+### Modes representation in neovim
+Mode letters:
+
+n: normal only
+v: visual and select
+o: operator-pending
+x: visual only
+s: select only
+i: insert
+c: command-line
+l: insert, command-line, regexp-search (and others. Collectively called "Lang-Arg" pseudo-mode)
