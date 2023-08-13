@@ -55,3 +55,12 @@ map("n", "<Leader>cs", function()
   )
 end, { desc = "color scheme" })
 map('n', '<Leader><Leader>f', flatter, { desc = "completely removes the background colors" })
+
+
+map('n', '<leader>tr', builtin.registers, { desc = "Find string from grep" })
+map('n', '<leader>tj', builtin.jumplist, { desc = "Find string from grep" })
+map('n', '<leader>tqs', builtin.quickfixhistory, { desc = "Find string from grep" })
+map('n', '<leader>tq', builtin.quickfix, { desc = "Find string from grep" })
+map('n', '<leader>tm', builtin.marks, { desc = "Find string from grep" })
+map('n', '<leader>th', builtin.highlights, { desc = "Find string from grep" })
+map('n', '<leader>to', builtin.command_history, { desc = "Find string from grep" })

@@ -18,11 +18,20 @@ require 'nvim-treesitter.configs'.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "<M-w>", -- maps in normal mode to init the node/scope selection
-      node_incremental = "<M-w>", -- increment to the upper named parent
+      init_selection = "<M-w>",     -- maps in normal mode to init the node/scope selection
+      node_incremental = "<M-w>",   -- increment to the upper named parent
       node_decremental = "<M-C-w>", -- decrement to the previous node
-      scope_incremental = "<M-e>", -- increment to the upper scope (as defined in locals.scm)
+      scope_incremental = "<M-e>",  -- increment to the upper scope (as defined in locals.scm)
     }
+  },
+  textsubjects = {
+    enable = true,
+    prev_selection = ',',     -- (Optional) keymap to select the previous selection
+    keymaps = {
+      ['.'] = 'textsubjects-smart',
+      [';'] = 'textsubjects-container-outer',
+      ['i;'] = 'textsubjects-container-inner',
+    },
   },
   textobjects = {
     select = {

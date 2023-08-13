@@ -53,15 +53,25 @@ local plugins = {
   { "loctvl842/monokai-pro.nvim" },
   { "edeneast/nightfox.nvim" },
   { 'folke/tokyonight.nvim' },
-  { 'navarasu/onedark.nvim' },
+  {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        style = 'deep',
+        toggle_style_key = "<leader>cr",
+        toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
+      }
+    end
+  },
   { 'Mofiqul/vscode.nvim' },
   { "ellisonleao/gruvbox.nvim" },
-  { "catppuccin/nvim",            name = "catppuccin" },
+  { "catppuccin/nvim",         name = "catppuccin" },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     lazy = true,
   },
+  { "bluz71/vim-nightfly-colors", name = "nightfly",  lazy = false },
 
   -- movement stuff
   ('christoomey/vim-tmux-navigator'),
@@ -82,6 +92,7 @@ local plugins = {
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
   },
+  ('RRethy/nvim-treesitter-textsubjects'),
   ('nvim-treesitter/nvim-treesitter-textobjects'),
   ('nvim-treesitter/nvim-treesitter-context'),
   ('nvim-treesitter/playground'),
@@ -96,7 +107,7 @@ local plugins = {
   ('theprimeagen/refactoring.nvim'),
 
   -- terminal
-  { 'akinsho/toggleterm.nvim', event = "VeryLazy", version = "*", config = true },
+  { 'akinsho/toggleterm.nvim',    event = "VeryLazy", version = "*", config = true },
 
   -- lsp stuff
   {

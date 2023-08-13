@@ -30,6 +30,10 @@ cmp_mappings['<S-Tab>'] = nil
 
 lsp.set_preferences({
   sign_icons = {
+    error = '',
+    warn = '',
+    hint = '',
+    info = ''
   }
 })
 
@@ -38,7 +42,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.on_attach(function(client, bufnr)
-  client.server_capabilities.semanticTokensProvider = nil
+  -- client.server_capabilities.semanticTokensProvider = nil
   local opts = { buffer = bufnr, remap = false }
   local map = vim.keymap.set
 
@@ -59,6 +63,13 @@ lsp.on_attach(function(client, bufnr)
   --   vim.lsp.buf.format()
   -- end)
 end)
+
+-- to disable semantic highlighting
+-- lsp.set_server_config({
+--   on_init = function(client)
+--     client.server_capabilities.semanticTokensProvider = nil
+--   end,
+-- })
 
 lsp.setup()
 vim.diagnostic.config({
