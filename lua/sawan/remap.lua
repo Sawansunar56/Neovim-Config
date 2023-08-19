@@ -46,7 +46,10 @@ map("n", "<leader>ff", vim.lsp.buf.format)
 -- settings of vim. Prime uses it for his reference checking
 map("n", "<A-down>", "<cmd>cnext<CR>zz")
 map("n", "<A-up>", "<cmd>cprev<CR>zz")
-map("n", "<A-x>", "<cmd>cclose<CR>zz")
+map("n", "<A-x>", "<cmd>cclose<CR>")
+map("n", "<A-c>", "<cmd>copen<CR>")
+map("n", "<A-n>", "<cmd>lopen<CR>")
+map("n", "<A-m>", "<cmd>lclose<CR>")
 map("n", "<A-right>", "<cmd>lnext<CR>zz")
 map("n", "<A-left>", "<cmd>lprev<CR>zz")
 
