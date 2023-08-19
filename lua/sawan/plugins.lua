@@ -14,15 +14,28 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   -- telescope
+  { "junegunn/fzf",               build = ":call fzf#install()" },
   {
-    "ibhagwan/fzf-lua",
-    -- optional for icon support
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "linrongbin16/fzfx.nvim",
+    dependencies = { "junegunn/fzf" },
     config = function()
-      -- calling `setup` is optional for customization
-      require("fzf-lua").setup({})
+      require("fzfx").setup({
+        env = {
+          nvim = 'nvim',
+          fzf = 'fzf',
+        }
+      })
     end
   },
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   -- optional for icon support
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function()
+  --     -- calling `setup` is optional for customization
+  --     require("fzf-lua").setup({})
+  --   end
+  -- },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
