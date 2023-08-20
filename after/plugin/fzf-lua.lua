@@ -40,3 +40,4 @@ local map = vim.keymap.set
 -- fzfx section
 map('n', '<space>fz', '<cmd>FzfxFiles<cr>',{ desc = "FZF Files" })
 map('n', '<space>mi', '<cmd>FzfxGFiles<cr>',{ desc = "FZF git Files" })
+map('n', '<space>fi', '<cmd>FzfxLiveGrep<cr>',{ desc = "FZF Live Grep" })
