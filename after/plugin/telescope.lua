@@ -1,4 +1,5 @@
 require('telescope').load_extension('fzf')
+require("telescope").load_extension "file_browser"
 
 local builtin = require('telescope.builtin')
 local theme = require('telescope.themes')
@@ -64,3 +65,6 @@ map('n', '<leader>tq', builtin.quickfix, { desc = "Find string from grep" })
 map('n', '<leader>tm', builtin.marks, { desc = "Find string from grep" })
 map('n', '<leader>th', builtin.highlights, { desc = "Find string from grep" })
 map('n', '<leader>to', builtin.command_history, { desc = "Find string from grep" })
+
+map('n', '<leader>ph', ":Telescope file_browser<cr>", { desc = "telescope command history" })
+map('n', '<leader>pt', ":Telescope file_browser path=%:p:h select_buffer=true<cr>", { desc = "telescope command history" })
