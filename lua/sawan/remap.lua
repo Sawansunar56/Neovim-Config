@@ -2,12 +2,18 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 map("n", "<leader>pv", vim.cmd.Ex)
 
+local function flatter()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+end
+
+map('n', '<Leader><Leader>f', flatter, { desc = "completely removes the background colors" })
 -- For increments and decrements  in numbers
 map({ "n", "v" }, "<leader>+", "<C-a>")
 map({ "n", "v" }, "g+", "g<C-a>")
 map({ "n", "v" }, "<leader>-", "<C-x>")
 map({ "n", "v" }, "g-", "g<C-x>")
-
 
 -- moving lines above and below in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -48,8 +54,8 @@ map("n", "<A-down>", "<cmd>cnext<CR>zz")
 map("n", "<A-up>", "<cmd>cprev<CR>zz")
 map("n", "<A-x>", "<cmd>cclose<CR>")
 map("n", "<A-c>", "<cmd>copen<CR>")
-map("n", "<A-n>", "<cmd>lopen<CR>")
-map("n", "<A-m>", "<cmd>lclose<CR>")
+map("n", "<A-v>", "<cmd>lopen<CR>")
+map("n", "<A-b>", "<cmd>lclose<CR>")
 map("n", "<A-right>", "<cmd>lnext<CR>zz")
 map("n", "<A-left>", "<cmd>lprev<CR>zz")
 
