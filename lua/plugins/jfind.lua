@@ -49,7 +49,7 @@ return {
     end)
 
     -- make sure to rebuld jfind if you want live grep
-    vim.keymap.set("n", "<leader><A-f>", function()
+    vim.keymap.set("n", "<leader>fj", function()
       jfind.liveGrep({
         exclude = { "*.hpp" }, -- overrides setup excludes
         hidden = true,         -- grep hidden files/directories
