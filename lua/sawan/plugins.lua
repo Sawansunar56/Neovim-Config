@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   -- telescope
-  { "junegunn/fzf",               build = ":call fzf#install()" },
+  { "junegunn/fzf",        build = ":call fzf#install()" },
   {
     "linrongbin16/fzfx.nvim",
     dependencies = { "junegunn/fzf" },
@@ -36,6 +36,27 @@ local plugins = {
   --     require("fzf-lua").setup({})
   --   end
   -- },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    keys = {
+      { "-", "<CMD>Oil<CR>", desc = "Open parent directory" }
+    }
+  },
+  { 'echasnovski/mini.ai', version = false,              config = true },
+  {
+    'echasnovski/mini.files',
+    version = false,
+    config = true,
+    keys = {
+      { "<leader>nt", "<cmd>lua MiniFiles.open()<cr>", desc = "Open Mini Files" }
+    }
+  },
+  { 'echasnovski/mini.jump',      version = false, config = true },
+  { 'echasnovski/mini.move',      version = false, config = true },
+  { 'echasnovski/mini.operators', version = false, config = true },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',

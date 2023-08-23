@@ -10,5 +10,5 @@ map("n", "<C-m>", function() ui.nav_file(2) end)
 map("n", "<C-s>", function() ui.nav_file(3) end)
 map("n", "<C-t>", function() ui.nav_file(4) end)
 
-map("n", "<A-j>", function() ui.nav_next() end)
-map("n", "<A-k>", function() ui.nav_prev() end)
+map("n", "<A-n>", function() ui.nav_next() end)
+map("n", "<A-p>", function() ui.nav_prev() end)

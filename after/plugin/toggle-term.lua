@@ -1,6 +1,6 @@
 require"toggleterm".setup {
   size = 13,
-  open_mapping = [[<c-\>]],
+  open_mapping = [[<A-t>]],
   shade_filetypes = {},
   shade_terminals = true,
   shading_factor = '1',
@@ -15,4 +15,4 @@ local toggle_lazygit = function()
   lazygit:toggle()
 end
 
-vim.keymap.set('n', '<A-l>', toggle_lazygit)
+vim.keymap.set('n', '<A-e>', toggle_lazygit)
