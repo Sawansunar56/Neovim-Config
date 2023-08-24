@@ -1,3 +1,11 @@
+vim.g.python3_host_prog = "/usr/bin/python3"
+
+-- Visual Feeback to yank area
+vim.cmd[[
+augroup highlight_yank
+autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=50}
+augroup END
+]]
 local opt = vim.opt
 
 opt.guicursor = ""

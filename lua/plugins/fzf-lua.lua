@@ -24,7 +24,8 @@ return {
     { "<leader>fgh", "<cmd>FzfLua lsp_finder<cr>",                 desc = "FZF lsp finder" },
     { "<leader>fdd", "<cmd>FzfLua diagnostics_document<cr>",       desc = "FZF lsp diagnostics document" },
     { "<leader>fdw", "<cmd>FzfLua diagnostics_workspace<cr>",      desc = "FZF diagnostics workspace" },
-    { "<leader>mo",  "<cmd>FzfLua command_history<cr>",            desc = "FZF command_history" },
+    { "<leader>moh", "<cmd>FzfLua command_history<cr>",            desc = "FZF command_history" },
+    { "<leader>moo", "<cmd>FzfLua commands<cr>",                   desc = "FZF commands" },
     { "<leader>mm",  "<cmd>FzfLua marks<cr>",                      desc = "FZF marks" },
     { "<leader>mj",  "<cmd>FzfLua jumps<cr>",                      desc = "FZF jumps" },
     { "<leader>mc",  "<cmd>FzfLua changes<cr>",                    desc = "FZF changes" },
@@ -37,6 +38,8 @@ return {
     { "<leader>mbl", "<cmd>FzfLua blines<cr>",                     desc = "FZF buffer lines" },
   },
   -- optional for icon support
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    { "junegunn/fzf", build = "./install --bin" } },
   config = true
 }
