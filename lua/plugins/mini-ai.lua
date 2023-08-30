@@ -3,6 +3,7 @@
 -- So, operator vn key, van"
 return {
   'echasnovski/mini.ai',
+  event = "VeryLazy",
   version = false,
   config = true
 }

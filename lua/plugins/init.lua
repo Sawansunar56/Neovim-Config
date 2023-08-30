@@ -2,22 +2,27 @@ return {
   -- themes
   {
     "projekt0n/github-nvim-theme",
+    event = "VeryLazy",
   },
-  -- {
-  --   "hardhackerlabs/theme-vim",
-  -- },
+  {
+    "hardhackerlabs/theme-vim",
+    event = "VeryLazy",
+  },
   {
     "loctvl842/monokai-pro.nvim",
+    event = "VeryLazy",
   },
   {
     "edeneast/nightfox.nvim",
+    event = "VeryLazy",
   },
   {
     'folke/tokyonight.nvim',
+    event = "VeryLazy",
   },
   {
     'navarasu/onedark.nvim',
-
+    event = "VeryLazy",
     config = function()
       require('onedark').setup {
         style = 'deep',
@@ -28,17 +33,22 @@ return {
   },
   {
     'Mofiqul/vscode.nvim',
+    event = "VeryLazy",
   },
   {
     "ellisonleao/gruvbox.nvim",
+    event = "VeryLazy",
 
   },
-  { "catppuccin/nvim",            name = "catppuccin" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    event = "VeryLazy",
+  },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
     lazy = true
   },
-  { "bluz71/vim-nightfly-colors", name = "nightfly",  lazy = false },
-
+  { "bluz71/vim-nightfly-colors", name = "nightfly", event = "VeryLazy" },
 }

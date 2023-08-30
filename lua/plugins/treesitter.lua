@@ -9,7 +9,7 @@ return {
     ('nvim-treesitter/nvim-treesitter-context'),
     {
       'nvim-treesitter/playground',
-      event = "VeryLazy"
+      lazy = true,
     },
   },
   config = function()

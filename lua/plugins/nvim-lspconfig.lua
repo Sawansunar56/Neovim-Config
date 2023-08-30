@@ -1,27 +1,26 @@
 return {
-  'neovim/nvim-lspconfig',
-  cmd = "LspInfo",
+  'williamboman/mason-lspconfig.nvim', -- Optional
+  cmd = { 'LspInstall', 'LspStart' },
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- LSP Support
-    { 'williamboman/mason.nvim' },           -- Optional
-    { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+    { 'neovim/nvim-lspconfig' },
 
     -- Autocompletion
     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
   },
   config = function()
     local lsp = require("lsp-zero").preset({})
-
-    lsp.ensure_installed({
-      'tsserver',
-      'rust_analyzer'
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = true,
+      update_in_insert = false,
+      underline = true,
+      severity_sort = false,
+      float = true,
     })
 
-    -- Fix Undefined global 'vim'
-    lsp.nvim_workspace()
     lsp.on_attach(function(client, bufnr)
-      -- client.server_capabilities.semanticTokensProvider = nil
       local opts = { buffer = bufnr, remap = false }
       local map = vim.keymap.set
 
@@ -38,80 +37,46 @@ return {
       map("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
       map("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
       map("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-
-      -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-      --   vim.lsp.buf.format()
-      -- end)
     end)
 
+    lsp.set_sign_icons({
+      error = '✘',
+      warn = '▲',
+      hint = '⚑',
+      info = '»'
+    })
+
     require("neodev").setup({})
-    local cmp_nvim_lsp = require "cmp_nvim_lsp"
-    local ls = require("lspconfig")
 
-    -- for globla semanticTokens close.
-    -- lsp.set_server_config({
-    --   on_init = function(client)
-    --     client.server_capabilities.semanticTokensProvider = nil
-    --   end,
-    -- })
-    ls.gopls.setup({
-      settings = {
-        gopls = {
-          semanticTokens = true,
-          gofumpt = true
-        }
-      }
-    })
-    ls.lua_ls.setup({
-      settings = {
-        Lua = {
-          completion = {
-            callSnippet = "Replace"
+    require('mason').setup({})
+    require('mason-lspconfig').setup({
+      ensure_installed = { 'tsserver', 'rust_analyzer' },
+      handlers = {
+        lsp.default_setup,
+        lua_ls = function()
+          require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+        end,
+
+        gopls = function()
+          require('lspconfig').gopls.setup({
+            settings = {
+              gopls = {
+                semanticTokens = true,
+                gofumpt = true
+              }
+            }
+          })
+        end,
+
+        clangd = function()
+          require('lspconfig').clangd.setup {
+            cmd = {
+              "clangd",
+              "--offset-encoding=utf-16",
+            },
           }
-        }
+        end,
       }
-    })
-
-    ls.clangd.setup {
-      on_init = function(client)
-        client.server_capabilities.semanticTokensProvider = nil
-      end,
-      capabilities = cmp_nvim_lsp.default_capabilities(),
-      flags = {
-        debounce_text_changes = 150,
-        allow_incremental_sync = false
-      },
-      cmd = {
-        "clangd",
-        "--offset-encoding=utf-16",
-      },
-    }
-
-    lsp.setup()
-
-    lsp.set_preferences({
-      sign_icons = {
-        error = '',
-        warn = '',
-        hint = '',
-        info = ''
-      }
-    })
-
-    -- to disable semantic highlighting
-    -- lsp.set_server_config({
-    --   on_init = function(client)
-    --     client.server_capabilities.semanticTokensProvider = nil
-    --   end,
-    -- })
-
-    vim.diagnostic.config({
-      virtual_text = true,
-      signs = true,
-      update_in_insert = false,
-      underline = true,
-      severity_sort = false,
-      float = true,
     })
   end
 }

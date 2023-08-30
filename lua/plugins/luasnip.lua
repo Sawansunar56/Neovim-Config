@@ -1,5 +1,8 @@
 return {
   'L3MON4D3/LuaSnip',
+  lazy = true,
+  dependencies =
+  { 'rafamadriz/friendly-snippets' },       -- Optional
   config = function()
     if not pcall(require, "luasnip") then
       return

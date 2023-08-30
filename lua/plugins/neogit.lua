@@ -1,10 +1,13 @@
 return {
   "NeogitOrg/neogit",
-  event = "VeryLazy",
+  lazy = true,
+  keys = {
+    { "<leader>ng", "<cmd>Neogit<cr>", desc = "Neogit Open" }
+  },
   dependencies = {
-    "nvim-lua/plenary.nvim",           -- required
-    "nvim-telescope/telescope.nvim",   -- optional
-    "sindrets/diffview.nvim",          -- optional
+    "nvim-lua/plenary.nvim",         -- required
+    "nvim-telescope/telescope.nvim", -- optional
+    "sindrets/diffview.nvim",        -- optional
   },
   config = true
 }
