@@ -1,6 +1,6 @@
 return {
   'theprimeagen/refactoring.nvim',
-  lazy = true,
+  event = "VeryLazy",
   keys = {
     {
       "<leader>ri",

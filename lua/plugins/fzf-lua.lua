@@ -1,5 +1,6 @@
 return {
   "ibhagwan/fzf-lua",
+  lazy = true,
   keys = {
     { "<leader>fz",  "<cmd>FzfLua files<cr>",                      desc = "FZF files" },
     { "<leader>mi",  "<cmd>FzfLua git_files<cr>",                  desc = "FZF git files" },

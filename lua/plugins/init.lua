@@ -5,7 +5,7 @@ return {
     event = "VeryLazy",
   },
   {
-    "hardhackerlabs/theme-vim",
+    "pynappo/theme-vim",
     event = "VeryLazy",
   },
   {
@@ -48,7 +48,11 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    lazy = true
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("rose-pine")
+    end
   },
   { "bluz71/vim-nightfly-colors", name = "nightfly", event = "VeryLazy" },
 }
