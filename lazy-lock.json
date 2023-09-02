@@ -10,7 +10,7 @@
   "flash.nvim": { "branch": "main", "commit": "967117690bd677cb7b6a87f0bc0077d2c0be3a27" },
   "friendly-snippets": { "branch": "main", "commit": "377d45475b49e37460a902d6d569d2093d4037d0" },
   "fzf": { "branch": "master", "commit": "cf552b5f3b1c52df014904dd82a7885f52f070bc" },
-  "fzfx.nvim": { "branch": "main", "commit": "3c432a68e1df587ca01c7ab7a56f9618620a7c72" },
+  "fzf.vim": { "branch": "master", "commit": "811f34b70b60b4df2997e3ba8cd109e7d06d683b" },
   "github-nvim-theme": { "branch": "main", "commit": "806903c1b66a6b29347871922acd7d830a9d5c6a" },
   "gruvbox.nvim": { "branch": "main", "commit": "6d409ee8af4e84d2327b4b5856f843b97a85a567" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
