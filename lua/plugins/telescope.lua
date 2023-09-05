@@ -1,7 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
   lazy = true,
-  tag = '0.1.2',
   keys = {
     { '<leader>tr',  "<cmd>Telescope registers<cr>",                             desc = "telescope register list" },
     { '<leader>tj',  "<cmd>Telescope jumplist<cr>",                              desc = "telescope jumplist" },

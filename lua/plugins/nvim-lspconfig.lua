@@ -1,16 +1,17 @@
 return {
-  'williamboman/mason-lspconfig.nvim', -- Optional
-  cmd = { 'LspInstall', 'LspStart' },
+  'neovim/nvim-lspconfig',
+  cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- LSP Support
-    { 'neovim/nvim-lspconfig' },
+    { 'williamboman/mason-lspconfig.nvim' },
 
     -- Autocompletion
     { 'hrsh7th/cmp-nvim-lsp' }, -- Required
   },
   config = function()
-    local lsp = require("lsp-zero").preset({})
+    local lsp = require("lsp-zero")
+    lsp.extend_lspconfig()
     vim.diagnostic.config({
       virtual_text = true,
       signs = true,
@@ -47,14 +48,14 @@ return {
     })
 
     require("neodev").setup({})
-
     require('mason').setup({})
     require('mason-lspconfig').setup({
-      ensure_installed = { 'tsserver', 'rust_analyzer' },
+      ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'gopls', 'clangd' },
       handlers = {
         lsp.default_setup,
         lua_ls = function()
-          require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+          local opts = lsp.nvim_lua_ls()
+          require('lspconfig').lua_ls.setup(opts)
         end,
 
         gopls = function()
