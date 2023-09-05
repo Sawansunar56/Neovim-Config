@@ -25,7 +25,11 @@ opt.wrap = false
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+if vim.loop.os_uname().sysname == "Windows_NT" then
+  opt.undodir = vim.fn.expand('~/.vim/undodir')
+else
+  opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+end
 opt.undofile = true
 
 opt.hlsearch = false
