@@ -41,20 +41,6 @@ return {
 
   },
   {
-    "sainnhe/gruvbox-material",
-    event = "VeryLazy"
-  },
-  {
-    "sainnhe/everforest",
-    event = "VeryLazy"
-  },
-  {
-    "sainnhe/edge",
-    event = "VeryLazy"
-  }
-
-  ,
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     event = "VeryLazy",
