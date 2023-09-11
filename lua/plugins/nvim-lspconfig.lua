@@ -3,11 +3,8 @@ return {
   cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    -- LSP Support
+    { 'hrsh7th/cmp-nvim-lsp' },
     { 'williamboman/mason-lspconfig.nvim' },
-
-    -- Autocompletion
-    { 'hrsh7th/cmp-nvim-lsp' }, -- Required
   },
   config = function()
     local lsp = require("lsp-zero")

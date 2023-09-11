@@ -6,6 +6,7 @@ return {
     { 'hrsh7th/cmp-path' },         -- Optional
     { 'saadparwaiz1/cmp_luasnip' }, -- Optional
     { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+    { 'L3MON4D3/LuaSnip' },
   },
   config = function()
     require('lsp-zero').extend_cmp()
