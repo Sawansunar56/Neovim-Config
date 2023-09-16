@@ -16,11 +16,11 @@ return {
     { '<leader>bd',  "<cmd>Telescope diagnostics<cr>",                           desc = "list diagnostics" },
     { '<leader>?',   "<cmd>Telescope oldfiles<cr>",                              desc = "Find recently opened files" },
     { '<leader>pf',  "<cmd>Telescope find_files<cr>",                            desc = "find files anywhere" },
-    { '<leader>pid', "<cmd>Telescope find_files no_ignore=true<cr>",             desc =
+    { '<leader>pig', "<cmd>Telescope find_files no_ignore=true<cr>",             desc =
     "find files anywhere including no ignore" },
     { '<leader>pih', "<cmd>Telescope find_files hidden=true<cr>",                desc =
     "find files anywhere including hidden" },
-    { '<leader>piu', "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
+    { '<leader>pif', "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
                                                                                    desc =
       "find files anywhere including no ignore and hidden files" },
     { '<C-p>',       "<cmd>Telescope git_files<cr>",                             desc = "Git Searches" },
