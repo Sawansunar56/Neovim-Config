@@ -51,8 +51,8 @@ return {
     -- make sure to rebuld jfind if you want live grep
     vim.keymap.set("n", "<leader>fj", function()
       jfind.liveGrep({
-        exclude = { "*.hpp" }, -- overrides setup excludes
-        hidden = true,         -- grep hidden files/directories
+        exclude = { "*.hpp" },     -- overrides setup excludes
+        hidden = true,             -- grep hidden files/directories
         caseSensitivity = "smart", -- sensitive, insensitive, smart
         --     will use vim settings by default
         preview = true,

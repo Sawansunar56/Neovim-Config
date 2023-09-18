@@ -24,8 +24,9 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("i", "<C-e>", "<C-o>dw")
-map("i", "<C-x>", "<C-o>d$")
+map("i", "<C-z>", "<C-o>d$")
+map("i", "<C-x>", "<C-o>dw")
+map("i", "<C-c>", "<C-o>x")
 
 -- map("n", "<leader>vwm", function()
 --   require("vim-with-me").StartVimWithMe()
