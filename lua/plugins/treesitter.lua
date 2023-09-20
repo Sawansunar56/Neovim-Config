@@ -7,9 +7,6 @@ return {
     ('RRethy/nvim-treesitter-textsubjects'),
     ('nvim-treesitter/nvim-treesitter-textobjects'),
     ('nvim-treesitter/nvim-treesitter-context'),
-    {
-      'nvim-treesitter/playground',
-    },
   },
   config = function()
     require 'nvim-treesitter.configs'.setup {
