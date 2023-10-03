@@ -45,7 +45,8 @@ return {
     require("yanky").setup({
       ring = {
         history_length = 256,
-        storage = "shada",
+        storage = "sqlite",
+        storage_path = vim.fn.stdpath("data") .. "/databases/yanky.db", -- Only for sqlite storage
       },
       highlight = {
         on_put = false,
@@ -74,5 +75,8 @@ return {
       }
     })
     require("telescope").load_extension("yank_history")
-  end
+  end,
+  dependencies = {
+    "kkharji/sqlite.lua"
+  },
 }

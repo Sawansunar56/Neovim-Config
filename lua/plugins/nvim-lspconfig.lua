@@ -7,6 +7,7 @@ return {
     { 'williamboman/mason-lspconfig.nvim' },
   },
   config = function()
+
     local lsp = require("lsp-zero")
     lsp.extend_lspconfig()
     vim.diagnostic.config({
@@ -21,6 +22,7 @@ return {
     lsp.on_attach(function(client, bufnr)
       local opts = { buffer = bufnr, remap = false }
       local map = vim.keymap.set
+
 
       map("n", "gd", function() vim.lsp.buf.definition() end, opts)
       map("n", "<leader>ed", function() vim.lsp.buf.declaration() end, opts)
@@ -51,8 +53,15 @@ return {
       handlers = {
         lsp.default_setup,
         lua_ls = function()
-          local opts = lsp.nvim_lua_ls()
-          require('lspconfig').lua_ls.setup(opts)
+          require('lspconfig').lua_ls.setup({
+            settings = {
+              Lua = {
+                workspace = { checkThirdParty = false },
+                telemetry = { enable = true },
+                hint = { enable = true }
+              }
+            }
+          })
         end,
 
         gopls = function()
@@ -60,7 +69,16 @@ return {
             settings = {
               gopls = {
                 semanticTokens = true,
-                gofumpt = true
+                gofumpt = true,
+                hints = {
+                  assignVariableTypes = true,
+                  compositeLiteralFields = true,
+                  compositeLiteralTypes = true,
+                  constantValues = true,
+                  functionTypeParameters = true,
+                  parameterNames = true,
+                  rangeVariableTypes = true,
+                },
               }
             }
           })
@@ -68,6 +86,9 @@ return {
 
         clangd = function()
           require('lspconfig').clangd.setup {
+            InlayHints = {
+              Enabled = true,
+            },
             cmd = {
               "clangd",
               "--offset-encoding=utf-16",

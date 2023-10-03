@@ -1,13 +1,24 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
-map("n", "<leader>pv", vim.cmd.Ex)
 
+-- Function sections
 local function flatter()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
+if vim.lsp.inlay_hint then
+  map(
+    "n",
+    "<leader>ih",
+    function() vim.lsp.inlay_hint(0, nil) end,
+    { desc = "Toggle inlay Hints" }
+  )
+end
+
+-- Keymaps section
+map("n", "<leader>pv", vim.cmd.Ex)
 map('n', '<Leader><Leader>f', flatter, { desc = "completely removes the background colors" })
 -- For increments and decrements  in numbers
 map({ "n", "v" }, "<leader>+", "<C-a>")
@@ -27,6 +38,7 @@ map("n", "N", "Nzzzv")
 map("i", "<C-z>", "<C-o>d$")
 map("i", "<C-x>", "<C-o>dw")
 map("i", "<C-c>", "<C-o>x")
+map("i", "<C-BS>", "<C-w>")
 
 -- map("n", "<leader>vwm", function()
 --   require("vim-with-me").StartVimWithMe()
