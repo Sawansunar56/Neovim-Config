@@ -60,7 +60,7 @@ map({ "n", "v" }, "<leader>d", [["_d]])
 --map("i", "<C-c>", "<Esc>")
 
 map("n", "Q", "<nop>")
-map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+map("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<CR>")
 map("n", "<leader>ff", vim.lsp.buf.format)
 
 -- Things I don't understand
