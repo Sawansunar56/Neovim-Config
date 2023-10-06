@@ -44,7 +44,7 @@ return {
 
   -- Module mappings. Use `''` (empty string) to disable one.
   mappings = {
-    start_jumping = '\\',
+    start_jumping = ',',
   },
 
   -- Whether to disable showing non-error feedback

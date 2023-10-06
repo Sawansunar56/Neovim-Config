@@ -17,8 +17,8 @@ if vim.lsp.inlay_hint then
   )
 end
 
--- Keymaps section
 map("n", "<leader>pv", vim.cmd.Ex)
+map("i", "<c-s>o", "<c-o>O")
 map('n', '<Leader><Leader>f', flatter, { desc = "completely removes the background colors" })
 -- For increments and decrements  in numbers
 map({ "n", "v" }, "<leader>+", "<C-a>")
@@ -38,7 +38,6 @@ map("n", "N", "Nzzzv")
 map("i", "<C-z>", "<C-o>d$")
 map("i", "<C-x>", "<C-o>dw")
 map("i", "<C-c>", "<C-o>x")
-map("i", "<C-BS>", "<C-w>")
 
 -- map("n", "<leader>vwm", function()
 --   require("vim-with-me").StartVimWithMe()

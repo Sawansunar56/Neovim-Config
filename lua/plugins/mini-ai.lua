@@ -27,6 +27,12 @@ return {
 
       silent = false,
 
+      -- commands available
+      -- numbered objects
+      -- ? - prompt left side and  right side to select di?
+      -- t - tag
+      -- f - function call
+      -- a - argument -
       custom_textobjects = {
         F = spec_treesitter({ a = '@function.outer', i = '@function.inner' }),
         o = spec_treesitter({ a = '@loop.outer', i = '@loop.inner' }),
