@@ -1,6 +1,7 @@
 return {
   "gbprod/yanky.nvim",
   lazy = true,
+  enabled = function() return jit.os == "Linux" end,
   keys = {
     {
       "<leader>yk",
