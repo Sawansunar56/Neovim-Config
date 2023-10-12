@@ -9,9 +9,9 @@ opt.guicursor = ""
 opt.nu = true
 opt.relativenumber = true
 
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.smarttab = true
 
@@ -24,9 +24,9 @@ opt.wrap = false
 opt.swapfile = false
 opt.backup = false
 if vim.loop.os_uname().sysname == "Windows_NT" then
-  opt.undodir = vim.fn.expand('~/.vim/undodir')
+    opt.undodir = vim.fn.expand('~/.vim/undodir')
 else
-  opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+    opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 end
 opt.undofile = true
 
@@ -42,3 +42,10 @@ opt.isfname:append("@-@")
 opt.updatetime = 50
 
 opt.colorcolumn = "80"
+opt.list = true
+opt.listchars = {
+    eol = "↲",
+    tab = "  ",
+    trail = "␣",
+    nbsp = "☠"
+}
