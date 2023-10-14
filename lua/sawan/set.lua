@@ -44,8 +44,7 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 opt.list = true
 opt.listchars = {
-    eol = "↲",
+    -- eol = "↲",
     tab = "  ",
-    trail = "␣",
     nbsp = "☠"
 }
