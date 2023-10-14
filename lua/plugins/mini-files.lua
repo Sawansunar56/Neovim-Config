@@ -1,8 +1,8 @@
 return {
   'echasnovski/mini.files',
-  event = "VeryLazy",
+  lazy = true,
   keys = {
-    { "<leader>nt", "<cmd>lua MiniFiles.open()<cr>", desc = "Open Mini Files" },
+    { "<leader>nf", "<cmd>lua MiniFiles.open()<cr>", desc = "Open Mini Files" },
   },
   version = false,
   config = true,

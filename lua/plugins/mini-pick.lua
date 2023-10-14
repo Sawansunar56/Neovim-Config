@@ -1,5 +1,6 @@
 return {
     'echasnovski/mini.pick',
+    lazy = true,
     keys = {
         { "<leader>pcf", ":Pick files<cr>",            desc = "Mini Picker" },
         { "<leader>pck", ":Pick files tool='git'<cr>", desc = "Mini Picker git" },
