@@ -2,6 +2,7 @@ return {
   "jake-stewart/jfind.nvim",
   branch = "2.0",
   event = "VeryLazy",
+  enabled = function() return jit.os == "Linux" end,
   config = function()
     local jfind = require("jfind")
     local key = require("jfind.key")
