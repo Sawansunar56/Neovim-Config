@@ -17,6 +17,13 @@ if vim.lsp.inlay_hint then
   )
 end
 
+if jit.os ~= "Linux" then
+   map("n","<C-j>", "<C-w>j", { desc = "go to down buffer" } )
+   map("n","<C-k>", "<C-w>k", { desc = "go to up buffer" } )
+   map("n","<C-h>", "<C-w>h", { desc = "go to left buffer" } )
+   map("n","<C-l>", "<C-w>l", { desc = "go to right buffer" } )
+end
+
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to netrw"})
 -- map("i", "<c-s>o", "<c-o>O", { desc = "enter into up from anywhere in the line"})
 -- map("i", "<c-s><cr>", "<c-o>o", { desc = "enter anywhere from the file"})
