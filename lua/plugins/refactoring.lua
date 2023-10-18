@@ -1,11 +1,12 @@
 return {
   'theprimeagen/refactoring.nvim',
-  event = "VeryLazy",
+  lazy = true,
+  config = true,
   keys = {
     {
       "<leader>ri",
-      [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
       mode = "v",
+      [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
       { desc = "Refactoring from the primagen",  noremap = true, silent = true, expr = false }
     },
   }
