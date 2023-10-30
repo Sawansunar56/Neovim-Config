@@ -22,7 +22,7 @@ return {
       "gives out the implementations in a telescope list"
     },
     { '<leader>bd', "<cmd>Telescope diagnostics<cr>", desc = "list diagnostics" },
-    { '<leader>?',  "<cmd>Telescope oldfiles<cr>",    desc = "Find recently opened files" },
+    { '<leader>?',  "<cmd>Telescope oldfiles<cr>",    desc = "Find recently old files" },
     { '<leader>pf', "<cmd>Telescope find_files<cr>",  desc = "find files anywhere" },
     {
       '<leader>pig',

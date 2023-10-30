@@ -36,6 +36,7 @@ return {
     config = function()
         require 'marks'.setup {
             default_mappings = true,
+            signs = false,
             builtin_marks = { ".", "<", ">", "^" },
             cyclic = true,
             force_write_shada = false,

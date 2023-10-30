@@ -1,5 +1,18 @@
 return {
     -- themes
+
+    {
+        'cpea2506/one_monokai.nvim',
+        event = "VeryLazy",
+    },
+    {
+        'shaunsingh/moonlight.nvim',
+        event = "VeryLazy",
+    },
+    {
+        'rebelot/kanagawa.nvim',
+        event = "VeryLazy",
+    },
     {
         "projekt0n/github-nvim-theme",
         event = "VeryLazy",
