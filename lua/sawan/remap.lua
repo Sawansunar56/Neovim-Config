@@ -40,9 +40,9 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("i", "<C-z>", "<C-o>d$")
-map("i", "<C-x>", "<C-o>dw")
-map("i", "<C-c>", "<C-o>x")
+-- map("i", "<C-z>", "<C-o>d$")
+-- map("i", "<C-x>", "<C-o>dw")
+-- map("i", "<C-c>", "<C-o>x")
 
 -- map("n", "<leader>vwm", function()
 --   require("vim-with-me").StartVimWithMe()
@@ -61,7 +61,7 @@ map("n", "<leader>Y", [["+Y]])
 map({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
---map("i", "<C-c>", "<Esc>")
+map("i", "<C-c>", "<Esc>")
 
 map("n", "Q", "<nop>")
 map("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<CR>")
