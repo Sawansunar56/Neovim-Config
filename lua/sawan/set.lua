@@ -41,6 +41,9 @@ opt.isfname:append("@-@")
 
 opt.updatetime = 50
 
+-- vim.cmd [[
+-- syntax off
+-- ]]
 opt.colorcolumn = "80"
 opt.list = true
 opt.listchars = {

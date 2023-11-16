@@ -13,7 +13,7 @@ return {
             "<leader>gr",
             "<cmd>Telescope lsp_references<cr>",
             desc =
-            "gives out the references in a telescope list"
+            "Telescope References"
         },
         {
             "<leader>gi",
@@ -52,7 +52,6 @@ return {
     },
     dependencies = {
         'nvim-lua/plenary.nvim',
-
         'nvim-telescope/telescope-fzf-native.nvim',
     },
     config = function()
