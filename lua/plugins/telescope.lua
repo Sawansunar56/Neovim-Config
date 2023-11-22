@@ -59,6 +59,16 @@ return {
         local theme = require('telescope.themes')
         local map = vim.keymap.set
 
+        -- require('telescope').setup{
+        --     defaults = {
+        --         mappings = {
+        --             n = {
+        --                 ["l"] = require('telescope.actions').cycle_history_next,
+        --                 ["h"] = require('telescope.actions').cycle_history_prev,
+        --             }
+        --         }
+        --     }
+        -- }
 
         map("n", "<leader>wsd", function()
             builtin.lsp_dynamic_workspace_symbols(theme.get_dropdown())
