@@ -12,7 +12,7 @@ augroup END
 -- ]])
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufEnter" }, {
-  pattern = { "*.vert", "*.frag", "*.shader" },
+  pattern = { "*.vert", "*.frag", "*.shader", "*.geot" },
   callback = function()
     vim.opt.filetype = "glsl"
   end,

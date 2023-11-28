@@ -3,9 +3,9 @@ return {
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {
-        -- label = {
-        --     uppercase = false,
-        -- },
+        label = {
+            uppercase = false,
+        },
         modes = {
             char = {
                 -- to disable jump in normal f t F T
