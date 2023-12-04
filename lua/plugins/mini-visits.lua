@@ -1,6 +1,6 @@
 return {
-    'echasnovski/mini.extra',
+    'echasnovski/mini.visits',
     version = false,
-    lazy = true,
     config = true,
+    lazy = true,
 }

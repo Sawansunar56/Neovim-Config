@@ -9,10 +9,13 @@ return {
         { "<leader>pcl", ":Pick grep_live<cr>", desc = "Mini grep live" },
         { "<leader>pce", ":Pick resume<cr>",    desc = "Mini resume" },
         { "<leader>pch", ":Pick explorer<cr>",  desc = "Mini explorer" },
-        { "<leader>pcr", ":Pick lsp scope='references'<cr>",  desc = "Mini explorer" },
+        { "<leader>pcr", ":Pick lsp scope='references'<cr>",  desc = "Mini lsp references" },
+        { "<leader>pcv", ":Pick visit_paths<cr>",  desc = "Mini visited paths" },
+        { "<leader>pco", ":Pick old_files<cr>",  desc = "Mini old files" },
     },
     dependencies = {
         'echasnovski/mini.extra',
+        'echasnovski/mini.visits'
     },
     version = false,
     config = true,
