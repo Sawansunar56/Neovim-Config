@@ -4,7 +4,16 @@ return {
     branch = "harpoon2",
     config = function()
         local harpoon = require("harpoon")
-        harpoon:setup()
+        harpoon:setup(
+        {
+            settings = {
+                save_on_toggle = true,
+                sync_on_ui_close = false,
+                key = function()
+                    return vim.loop.cwd()
+                end
+            }
+        })
         local map = vim.keymap.set
 
         map("n", "<leader>a", function() harpoon:list():append() end)
