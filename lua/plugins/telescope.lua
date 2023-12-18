@@ -70,6 +70,14 @@ return {
         --     }
         -- }
 
+        local function telescope_live_grep_open_files()
+            builtin.live_grep{
+                grep_open_files = true,
+                prompt_title = 'Live Grep in Open Files'
+            }
+        end
+
+        map("n", "<leader>s/", telescope_live_grep_open_files, { desc = "Search / in open Files"})
         map("n", "<leader>wsd", function()
             builtin.lsp_dynamic_workspace_symbols(theme.get_dropdown())
         end, { desc = "dynamic workspace symbols" })

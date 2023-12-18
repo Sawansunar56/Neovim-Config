@@ -14,10 +14,6 @@ return {
         event = "VeryLazy",
     },
     {
-        "projekt0n/github-nvim-theme",
-        event = "VeryLazy",
-    },
-    {
         "pynappo/theme-vim",
         event = "VeryLazy",
     },
@@ -69,6 +65,5 @@ return {
     },
     { "bluz71/vim-nightfly-colors", name = "nightfly", event = "VeryLazy" },
     { 'cryptomilk/nightcity.nvim',  version = '*',     event = "VeryLazy" },
-    { 'talha-akram/noctis.nvim',    event = "VeryLazy" },
     { "tiagovla/tokyodark.nvim",    event = "VeryLazy" },
 }
