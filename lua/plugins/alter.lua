@@ -1,5 +1,6 @@
 return {
-    dir = "/home/sawan/projects/luaPlugin/alter/",
+    'Sawansunar56/Alter',
+    -- dir = "/home/sawan/projects/luaPlugin/alter/",
     event = "VeryLazy",
     config = function()
         local alter = require('alter')
