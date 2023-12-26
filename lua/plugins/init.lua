@@ -1,6 +1,4 @@
 return {
-    -- themes
-
     {
         'cpea2506/one_monokai.nvim',
         event = "VeryLazy",
@@ -11,10 +9,6 @@ return {
     },
     {
         'rebelot/kanagawa.nvim',
-        event = "VeryLazy",
-    },
-    {
-        "pynappo/theme-vim",
         event = "VeryLazy",
     },
     {

@@ -1,14 +1,14 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    event = "VeryLazy",
+    "nvim-telescope/telescope.nvim",
+    lazy = true,
     keys = {
-        { '<leader>tr',  "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
-        { '<leader>tj',  "<cmd>Telescope jumplist<cr>",        desc = "telescope jumplist" },
-        { '<leader>tqs', "<cmd>Telescope quickfixhistory<cr>", desc = "telescope quickfix history" },
-        { '<leader>tq',  "<cmd>Telescope quickfix<cr>",        desc = "telescope quickfix" },
-        { '<leader>tm',  "<cmd>Telescope marks<cr>",           desc = "telescope marks list " },
-        { '<leader>th',  "<cmd>Telescope highlights<cr>",      desc = "telescope highlights" },
-        { '<leader>to',  "<cmd>Telescope command_history<cr>", desc = "telescope command history" },
+        { "<leader>tr",  "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
+        { "<leader>tj",  "<cmd>Telescope jumplist<cr>",        desc = "telescope jumplist" },
+        { "<leader>tqs", "<cmd>Telescope quickfixhistory<cr>", desc = "telescope quickfix history" },
+        { "<leader>tq",  "<cmd>Telescope quickfix<cr>",        desc = "telescope quickfix" },
+        { "<leader>tm",  "<cmd>Telescope marks<cr>",           desc = "telescope marks list " },
+        { "<leader>th",  "<cmd>Telescope highlights<cr>",      desc = "telescope highlights" },
+        { "<leader>to",  "<cmd>Telescope command_history<cr>", desc = "telescope command history" },
         {
             "<leader>gr",
             "<cmd>Telescope lsp_references<cr>",
@@ -21,63 +21,68 @@ return {
             desc =
             "gives out the implementations in a telescope list"
         },
-        { '<leader>bd', "<cmd>Telescope diagnostics<cr>", desc = "list diagnostics" },
-        { '<leader>?',  "<cmd>Telescope oldfiles<cr>",    desc = "Find recently old files" },
-        { '<leader>pf', "<cmd>Telescope find_files<cr>",  desc = "find files anywhere" },
+        { "<leader>bd", "<cmd>Telescope diagnostics<cr>", desc = "list diagnostics" },
+        { "<leader>?",  "<cmd>Telescope oldfiles<cr>",    desc = "Find recently old files" },
+        { "<leader>pf", "<cmd>Telescope find_files<cr>",  desc = "find files anywhere" },
         {
-            '<leader>pig',
+            "<leader>pig",
             "<cmd>Telescope find_files no_ignore=true<cr>",
             desc =
             "find files anywhere including no ignore"
         },
         {
-            '<leader>pih',
+            "<leader>pih",
             "<cmd>Telescope find_files hidden=true<cr>",
             desc =
             "find files anywhere including hidden"
         },
         {
-            '<leader>pif',
+            "<leader>pif",
             "<cmd>Telescope find_files hidden=true no_ignore=true<cr>",
             desc =
             "find files anywhere including no ignore and hidden files"
         },
-        { '<C-p>',      "<cmd>Telescope git_files<cr>",   desc = "Git Searches" },
-        { '<leader>pl', "<cmd>Telescope live_grep<cr>",   desc = "Search in file" },
-        { '<leader>ht', "<cmd>Telescope help_tags<cr>",   desc = "search help" },
-        { '<leader>bb', "<cmd>Telescope buffers<cr>",     desc = '[ ] Find existing buffers' },
-        { '<leader>ke', "<cmd>Telescope keymaps<cr>",     desc = 'Get all the keymaps' },
-        { '<leader>ps', "<cmd>Telescope grep_string<cr>", desc = "Find string from grep" },
-        { '<leader>pr', "<cmd>Telescope resume<cr>",      desc = "telescope resume previous picker" },
+        { "<C-p>",      "<cmd>Telescope git_files<cr>",                         desc = "Git Searches" },
+        { "<leader>pl", "<cmd>Telescope live_grep<cr>",                         desc = "live grep all files" },
+        { "<leader>pw", "<cmd>Telescope live_grep_args<cr>",                    desc = "live grep args all files" },
+        { "<leader>ht", "<cmd>Telescope help_tags<cr>",                         desc = "search help" },
+        { "<leader>bb", "<cmd>Telescope buffers<cr>",                           desc = "[ ] Find existing buffers" },
+        { "<leader>ke", "<cmd>Telescope keymaps<cr>",                           desc = "Get all the keymaps" },
+        { "<leader>ps", "<cmd>Telescope grep_string<cr>",                       desc = "Find string from grep" },
+        { "<leader>pr", "<cmd>Telescope resume<cr>",                            desc = "telescope resume previous picker" },
+        { "<leader>fx", ":Telescope frecency theme=dropdown<cr>",               desc = "frecency" },
+        { "<leader>fr", ":Telescope frecency workspace=CWD theme=dropdown<cr>", desc = "frecency cwd" }
     },
     dependencies = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope-fzf-native.nvim',
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-fzf-native.nvim",
+        "nvim-telescope/telescope-frecency.nvim",
+        "nvim-telescope/telescope-live-grep-args.nvim"
     },
     config = function()
-        local builtin = require('telescope.builtin')
-        local theme = require('telescope.themes')
+        local builtin = require("telescope.builtin")
+        local theme = require("telescope.themes")
         local map = vim.keymap.set
 
-        -- require('telescope').setup{
+        -- require("telescope").setup{
         --     defaults = {
         --         mappings = {
         --             n = {
-        --                 ["l"] = require('telescope.actions').cycle_history_next,
-        --                 ["h"] = require('telescope.actions').cycle_history_prev,
+        --                 ["l"] = require("telescope.actions").cycle_history_next,
+        --                 ["h"] = require("telescope.actions").cycle_history_prev,
         --             }
         --         }
         --     }
         -- }
 
         local function telescope_live_grep_open_files()
-            builtin.live_grep{
+            builtin.live_grep {
                 grep_open_files = true,
-                prompt_title = 'Live Grep in Open Files'
+                prompt_title = "Live Grep in Open Files"
             }
         end
 
-        map("n", "<leader>s/", telescope_live_grep_open_files, { desc = "Search / in open Files"})
+        map("n", "<leader>s/", telescope_live_grep_open_files, { desc = "Search / in open Files" })
         map("n", "<leader>wsd", function()
             builtin.lsp_dynamic_workspace_symbols(theme.get_dropdown())
         end, { desc = "dynamic workspace symbols" })
@@ -88,16 +93,16 @@ return {
             builtin.lsp_workspace_symbols(theme.get_dropdown())
         end, { desc = "workspace symbols" })
 
-        map('n', '<leader>pg', function()
+        map("n", "<leader>pg", function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") });
         end)
-        map('n', '<leader>/', function()
+        map("n", "<leader>/", function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
             builtin.current_buffer_fuzzy_find(theme.get_dropdown {
                 winblend = 10,
                 previewer = false,
             }, { desc = "searches only the current buffer for the string" })
-        end, { desc = '[/] Fuzzily search in current buffer' })
+        end, { desc = "[/] Fuzzily search in current buffer" })
         map("n", "<Leader>cs", function()
             builtin.colorscheme(
                 theme.get_dropdown {
@@ -106,5 +111,9 @@ return {
                 }
             )
         end, { desc = "color scheme" })
+
+        -- Loading extensions
+        require("telescope").load_extension("frecency")
+        require("telescope").load_extension("live_grep_args")
     end
 }
