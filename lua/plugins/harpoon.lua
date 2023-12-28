@@ -1,39 +1,31 @@
 return {
     'theprimeagen/harpoon',
-    event = "VeryLazy",
+    lazy = true,
     branch = "harpoon2",
+    keys = {
+        { "<leader>a", function() require('harpoon'):list():append() end,        { desc = "Harpoon file add" } },
+        { "<C-e>",     function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, { desc = "Harpoon Menu" } },
+        { "<C-n>",     function() require('harpoon'):list():select(1) end,       { desc = "Harpoon select 1" } },
+        { "<C-m>",     function() require('harpoon'):list():select(2) end,       { desc = "Harpoon select 2" } },
+        { "<C-s>",     function() require('harpoon'):list():select(3) end,       { desc = "Harpoon select 3" } },
+        { "<C-t>",     function() require('harpoon'):list():select(4) end,       { desc = "Harpoon select 4" } },
+        { "<A-n>",     function() require('harpoon'):list():next() end,          { desc = "Harpoon next file" } },
+        { "<A-p>",     function() require('harpoon'):list():prev() end,          { desc = "Harpoon previous file" } },
+    },
     config = function()
         local harpoon = require("harpoon")
         harpoon:setup(
-        {
-            settings = {
-                save_on_toggle = true,
-                sync_on_ui_close = false,
-                key = function()
-                    return vim.loop.cwd()
-                end
-            }
-        })
-        local map = vim.keymap.set
-
-        map("n", "<leader>a", function() harpoon:list():append() end)
-        map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-        map("n", "<C-n>", function()     harpoon:list():select(1) end)
-        map("n", "<C-m>", function()     harpoon:list():select(2) end)
-        map("n", "<C-s>", function()     harpoon:list():select(3) end)
-        map("n", "<C-t>", function()     harpoon:list():select(4) end)
-        map("n", "<leader>1", function() harpoon:list():select(5) end)
-        map("n", "<leader>2", function() harpoon:list():select(6) end)
-        map("n", "<leader>3", function() harpoon:list():select(7) end)
-        map("n", "<leader>4", function() harpoon:list():select(8) end)
-        map("n", "<leader>5", function() harpoon:list():select(9) end)
-        map("n", "<leader>6", function() harpoon:list():select(10) end)
-
-        map("n", "<A-n>", function() harpoon:list():next() end)
-        map("n", "<A-p>", function() harpoon:list():prev() end)
+            {
+                settings = {
+                    save_on_toggle = true,
+                    sync_on_ui_close = false,
+                    key = function()
+                        return vim.loop.cwd()
+                    end
+                }
+            })
     end,
-    dependencies =  {
+    dependencies = {
         'nvim-lua/plenary.nvim'
     }
 }
