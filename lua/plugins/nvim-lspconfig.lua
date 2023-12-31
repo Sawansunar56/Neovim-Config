@@ -21,6 +21,9 @@ return {
 
         lsp.on_attach(function(client, bufnr)
             local map = vim.keymap.set
+            if client.name == "md" then
+                vim.cmd [[LspStop]]
+            end
 
             map("n", "gd", function()
                 vim.lsp.buf.definition()
@@ -113,6 +116,24 @@ return {
                                 },
                             },
                         },
+                    })
+                end,
+
+                -- to exclude markdown because this was slowing it down too much. 
+                tailwindcss = function()
+                    require("lspconfig").tailwindcss.setup({
+                        filetypes = {
+                            "html",
+                            "svelte",
+                            "vue",
+                            "typescript",
+                            "typescriptreact",
+                            "javascript",
+                            "javascriptreact",
+                            "css",
+                            "ejs",
+                            "astro",
+                        }
                     })
                 end,
 
