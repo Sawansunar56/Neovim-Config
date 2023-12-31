@@ -31,7 +31,6 @@ return {
     local terminal = require("nvterm.terminal")
     local toggle_modes = { 'n', 't' }
     local mappings = {
-      { toggle_modes, '<A-e>',       function() terminal.send('lazygit', 'float') end },
       { toggle_modes, '<leader>nvh', function() terminal.toggle('horizontal') end },
       { toggle_modes, '<leader>nvv', function() terminal.toggle('vertical') end },
       { toggle_modes, '<A-t>',       function() terminal.toggle('float') end },

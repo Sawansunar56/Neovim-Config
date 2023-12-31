@@ -125,6 +125,8 @@ return {
                             "clangd",
                             "--offset-encoding=utf-16",
                             "--header-insertion=never",
+                            "--fallback-style=webkit",
+                            -- "--format-style=LLVM",
                         },
                     })
                 end,

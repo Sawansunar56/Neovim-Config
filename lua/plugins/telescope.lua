@@ -1,6 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
-    lazy = true,
+    -- lazy = true,
+    event = "VeryLazy",
     keys = {
         { "<leader>tr",  "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
         { "<leader>tj",  "<cmd>Telescope jumplist<cr>",        desc = "telescope jumplist" },
@@ -44,20 +45,15 @@ return {
         },
         { "<C-p>",      "<cmd>Telescope git_files<cr>",                         desc = "Git Searches" },
         { "<leader>pl", "<cmd>Telescope live_grep<cr>",                         desc = "live grep all files" },
-        { "<leader>pw", "<cmd>Telescope live_grep_args<cr>",                    desc = "live grep args all files" },
         { "<leader>ht", "<cmd>Telescope help_tags<cr>",                         desc = "search help" },
         { "<leader>bb", "<cmd>Telescope buffers<cr>",                           desc = "[ ] Find existing buffers" },
         { "<leader>ke", "<cmd>Telescope keymaps<cr>",                           desc = "Get all the keymaps" },
         { "<leader>ps", "<cmd>Telescope grep_string<cr>",                       desc = "Find string from grep" },
         { "<leader>pr", "<cmd>Telescope resume<cr>",                            desc = "telescope resume previous picker" },
-        { "<leader>fx", ":Telescope frecency theme=dropdown<cr>",               desc = "frecency" },
-        { "<leader>fr", ":Telescope frecency workspace=CWD theme=dropdown<cr>", desc = "frecency cwd" }
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-fzf-native.nvim",
-        "nvim-telescope/telescope-frecency.nvim",
-        "nvim-telescope/telescope-live-grep-args.nvim"
     },
     config = function()
         local builtin = require("telescope.builtin")
@@ -111,9 +107,5 @@ return {
                 }
             )
         end, { desc = "color scheme" })
-
-        -- Loading extensions
-        require("telescope").load_extension("frecency")
-        require("telescope").load_extension("live_grep_args")
     end
 }
