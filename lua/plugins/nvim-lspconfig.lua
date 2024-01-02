@@ -64,7 +64,7 @@ return {
             map("n", "<leader>vrn", function()
                 vim.lsp.buf.rename()
             end, { buffer = bufnr, desc = "lsp rename" })
-            map("i", "<C-h>", function()
+            map("i", "<C-s>", function()
                 vim.lsp.buf.signature_help()
             end, { buffer = bufnr, desc = "lsp help" })
         end)

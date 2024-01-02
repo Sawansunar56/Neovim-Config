@@ -20,7 +20,6 @@ if jit.os ~= "Linux" then
     map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
     map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
 end
-
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to netrw" })
 -- map("i", "<c-s>o", "<c-o>O", { desc = "enter into up from anywhere in the line"})
 -- map("i", "<c-s><cr>", "<c-o>o", { desc = "enter anywhere from the file"})
@@ -30,6 +29,7 @@ map({ "n", "v" }, "<leader>+", "<C-a>", { desc = "increment numbers" })
 map({ "n", "v" }, "g+", "g<C-a>", { desc = "increment continuous numbers" })
 map({ "n", "v" }, "<leader>-", "<C-x>", { desc = "decrement numbers" })
 map({ "n", "v" }, "g-", "g<C-x>", { desc = "decrement continous numbers" })
+
 
 -- moving lines above and below in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -44,7 +44,10 @@ map("i", "<M-j>", "<Down>")
 map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
--- map("i", "<C-z>", "<C-o>d$")
+
+map("i", "<C-h>", function()
+    vim.api.nvim_input("<C-o>dT")
+end)
 -- map("i", "<C-x>", "<C-o>dw")
 -- map("i", "<C-c>", "<C-o>x")
 
@@ -94,7 +97,7 @@ map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" }) -- closes
 map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })         -- closes the split
 map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })     -- closes the split
 
-map("n", "<leader>to", ":tabnew<CR>", { desc = "tab new" })
+map("n", "<leader>ta", ":tabnew<CR>", { desc = "tab new" })
 map("n", "<leader>tx", ":tabclose<CR>", { desc = "tab close" })
 map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
 map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
