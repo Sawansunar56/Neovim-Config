@@ -48,7 +48,7 @@ return {
         { "<leader>ht", "<cmd>Telescope help_tags<cr>",                         desc = "search help" },
         { "<leader>bb", "<cmd>Telescope buffers<cr>",                           desc = "[ ] Find existing buffers" },
         { "<leader>ke", "<cmd>Telescope keymaps<cr>",                           desc = "Get all the keymaps" },
-        { "<leader>ps", "<cmd>Telescope grep_string<cr>",                       desc = "Find string from grep" },
+        { "<leader>pg", "<cmd>Telescope grep_string<cr>",                       desc = "Find string from grep" },
         { "<leader>pr", "<cmd>Telescope resume<cr>",                            desc = "telescope resume previous picker" },
     },
     dependencies = {
@@ -89,8 +89,16 @@ return {
             builtin.lsp_workspace_symbols(theme.get_dropdown())
         end, { desc = "workspace symbols" })
 
-        map("n", "<leader>pg", function()
+        map("n", "<leader>ps", function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") });
+        end)
+        map("n", "<leader>pws", function()
+            local word = vim.fn.expand("<cword>")
+            builtin.grep_string({ search = word });
+        end)
+        map("n", "<leader>pWs", function()
+            local word = vim.fn.expand("<cWORD>")
+            builtin.grep_string({ search = word });
         end)
         map("n", "<leader>/", function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.

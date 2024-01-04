@@ -1,4 +1,7 @@
 return {
+    -- {
+    --     'stevearc/profile.nvim'
+    -- },
     {
         'cpea2506/one_monokai.nvim',
         event = "VeryLazy",

@@ -80,22 +80,22 @@ map("n", "<A-right>", "<cmd>lnext<CR>zz", { desc = "locafix next" })
 map("n", "<A-left>", "<cmd>lprev<CR>zz", { desc = "locafix previous" })
 
 -- Everything window related
-map("n", "<Leader>sv", "<C-w>v", { desc = "open split vertically" })  -- vertically splits the screen
+map("n", "<Leader>sv", "<C-w>v", { desc = "open split vertically" })   -- vertically splits the screen
 map("n", "<Leader>sh", "<C-w>s", { desc = "open split horizontally" }) -- horizontally splits the screen
-map("n", "<Leader>se", "<C-w>=", { desc = "equal split" })            -- equals the area of the splits
-map("n", "<Leader>sx", ":close<CR>", { desc = "close split" })        -- closes the split
+map("n", "<Leader>se", "<C-w>=", { desc = "equal split" })             -- equals the area of the splits
+map("n", "<Leader>sx", ":close<CR>", { desc = "close split" })         -- closes the split
 map("n", "<C-w><left>", "<C-w><")
 map("n", "<C-w><right>", "<C-w>>")
 map("n", "<C-w><up>", "<C-w>+")
 map("n", "<C-w><down>", "<C-w>-")
 
 -- buffer shit
-map("n", "<leader>bv", ":vnew<CR>", { desc = "buffer vertical open" }) -- closes the split
+map("n", "<leader>bv", ":vnew<CR>", { desc = "buffer vertical open" })  -- closes the split
 map("n", "<leader>bh", ":new<CR>", { desc = "buffer horizontal open" }) -- closes the split
-map("n", "<leader>ba", ":buffers<CR>", { desc = "buffer list" })       -- closes the split
-map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" }) -- closes the split
-map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })         -- closes the split
-map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })     -- closes the split
+map("n", "<leader>ba", ":buffers<CR>", { desc = "buffer list" })        -- closes the split
+map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" })  -- closes the split
+map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })          -- closes the split
+map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })      -- closes the split
 
 map("n", "<leader>ta", ":tabnew<CR>", { desc = "tab new" })
 map("n", "<leader>tx", ":tabclose<CR>", { desc = "tab close" })
@@ -103,6 +103,8 @@ map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
 map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("v", "<leader><leader>h",
+    [[:s/\(static \|inline static \|\)\(\S\+ \)\(.*)\);/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- map("n", "<leader><leader>c", ":lua Colors(\"\")<Left><Left>")
 
