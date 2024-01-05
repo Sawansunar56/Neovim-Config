@@ -2,7 +2,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = true,
     keys = {
-        { "<leader>nr",  "<cmd>Neotree<cr>",       desc = "Open Neotree" },
+        { "<A-m>",  "<cmd>Neotree toggle<cr>",       desc = "Open Neotree" },
     },
     branch = "v3.x",
     dependencies = {
