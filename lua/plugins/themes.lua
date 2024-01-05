@@ -7,6 +7,14 @@ return {
         event = "VeryLazy",
     },
     {
+        "luisiacc/gruvbox-baby",
+        event = "VeryLazy"
+    },
+    {
+        "scottmckendry/cyberdream.nvim",
+        event = "VeryLazy"
+    },
+    {
         'shaunsingh/moonlight.nvim',
         event = "VeryLazy",
     },

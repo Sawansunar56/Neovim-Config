@@ -1,6 +1,5 @@
 return {
     "nvim-telescope/telescope.nvim",
-    -- lazy = true,
     event = "VeryLazy",
     keys = {
         { "<leader>tr",  "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
