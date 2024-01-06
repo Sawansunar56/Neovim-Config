@@ -24,7 +24,7 @@ return {
 		},
 
 		{ "<leader>ca", "<cmd>Lspsaga code_action<CR>", mode = { "n", "v" } },
-		{ "<A-s>", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" } },
+		{ "<A-d>", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" } },
 		{ "<leader>gh", "<cmd>Lspsaga finder<CR>" },
 		{ "<leader>rr", "<cmd>Lspsaga rename<CR>" },
 		{ "<leader>gar", "<cmd>Lspsaga rename ++project<CR>" },
