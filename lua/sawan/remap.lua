@@ -14,6 +14,12 @@ if vim.lsp.inlay_hint then
     end, { desc = "Toggle inlay Hints" })
 end
 
+map("n", "<M-o>",
+function()
+    vim.api.nvim_input("<cmd>b " .. vim.v.count1 .. "<cr>")
+end,
+{ desc = "buffer jump" })
+
 if jit.os ~= "Linux" then
     map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
     map("n", "<C-k>", "<C-w>k", { desc = "go to up buffer" })

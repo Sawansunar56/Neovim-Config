@@ -1,7 +1,13 @@
 return {
 	"nvimdev/lspsaga.nvim",
 	event = { "LspAttach" },
-	config = true,
+	config = function()
+        require('lspsaga').setup({
+            symbol_in_winbar = {
+                enable = false
+            }
+        })
+    end,
 	keys = {
 		{
 			"[E",

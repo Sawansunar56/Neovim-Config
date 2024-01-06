@@ -42,13 +42,13 @@ return {
             desc =
             "find files anywhere including no ignore and hidden files"
         },
-        { "<C-p>",      "<cmd>Telescope git_files<cr>",                         desc = "Git Searches" },
-        { "<leader>pl", "<cmd>Telescope live_grep<cr>",                         desc = "live grep all files" },
-        { "<leader>ht", "<cmd>Telescope help_tags<cr>",                         desc = "search help" },
-        { "<leader>bb", "<cmd>Telescope buffers<cr>",                           desc = "[ ] Find existing buffers" },
-        { "<leader>ke", "<cmd>Telescope keymaps<cr>",                           desc = "Get all the keymaps" },
-        { "<leader>pg", "<cmd>Telescope grep_string<cr>",                       desc = "Find string from grep" },
-        { "<leader>pr", "<cmd>Telescope resume<cr>",                            desc = "telescope resume previous picker" },
+        { "<C-p>",      "<cmd>Telescope git_files<cr>",   desc = "Git Searches" },
+        { "<leader>pl", "<cmd>Telescope live_grep<cr>",   desc = "live grep all files" },
+        { "<leader>ht", "<cmd>Telescope help_tags<cr>",   desc = "search help" },
+        { "<leader>bb", "<cmd>Telescope buffers<cr>",     desc = "[ ] Find existing buffers" },
+        { "<leader>ke", "<cmd>Telescope keymaps<cr>",     desc = "Get all the keymaps" },
+        { "<leader>pg", "<cmd>Telescope grep_string<cr>", desc = "Find string from grep" },
+        { "<leader>pr", "<cmd>Telescope resume<cr>",      desc = "telescope resume previous picker" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -58,17 +58,6 @@ return {
         local builtin = require("telescope.builtin")
         local theme = require("telescope.themes")
         local map = vim.keymap.set
-
-        -- require("telescope").setup{
-        --     defaults = {
-        --         mappings = {
-        --             n = {
-        --                 ["l"] = require("telescope.actions").cycle_history_next,
-        --                 ["h"] = require("telescope.actions").cycle_history_prev,
-        --             }
-        --         }
-        --     }
-        -- }
 
         local function telescope_live_grep_open_files()
             builtin.live_grep {
@@ -99,6 +88,9 @@ return {
             local word = vim.fn.expand("<cWORD>")
             builtin.grep_string({ search = word });
         end)
+        map("n", "<leader>td", function()
+            builtin.diagnostics(theme.get_dropdown { bufnr = 0, winblend = 10, previewer = false })
+        end, { desc = "telescope diagnostics for current buffer" })
         map("n", "<leader>/", function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
             builtin.current_buffer_fuzzy_find(theme.get_dropdown {

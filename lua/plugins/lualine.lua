@@ -1,6 +1,7 @@
 return {
   'nvim-lualine/lualine.nvim',
   event = "VeryLazy",
+  -- enabled = false,
   config = function()
     require('lualine').setup {
       options = {
@@ -24,9 +25,11 @@ return {
       sections = {
         lualine_a = { 'mode' },
         -- lualine_b = {'branch', 'diff'},
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        -- lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_b = { 'branch', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        -- lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { 'diff', 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
       },
@@ -43,5 +46,5 @@ return {
       inactive_winbar = {},
       extensions = {}
     }
-  end
+    end
 }

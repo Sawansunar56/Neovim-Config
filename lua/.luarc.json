@@ -4,5 +4,8 @@
         "/usr/local/share/nvim/runtime/lua",
         "/home/sawan/.dotfiles/nvim/lua",
         "${3rd}/luv/library"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name"
     ]
 }
