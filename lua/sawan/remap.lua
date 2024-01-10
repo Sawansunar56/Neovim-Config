@@ -51,6 +51,9 @@ map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
+map("i", "<C-b>", "<C-o>b")
+map("i", "<c-f>", "<C-o>w")
+
 map("i", "<C-h>", function()
     vim.api.nvim_input("<C-o>dT")
 end)
@@ -103,6 +106,7 @@ map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" })  -- close
 map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })          -- closes the split
 map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })      -- closes the split
 
+-- tab shit
 map("n", "<leader>ta", ":tabnew<CR>", { desc = "tab new" })
 map("n", "<leader>tx", ":tabclose<CR>", { desc = "tab close" })
 map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
@@ -110,7 +114,7 @@ map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("v", "<leader><leader>h",
-    [[:s/\(static \|inline static \|\)\(\S\+ \)\(.*)\);/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
+    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\);/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- map("n", "<leader><leader>c", ":lua Colors(\"\")<Left><Left>")
 
