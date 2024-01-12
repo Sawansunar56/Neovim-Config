@@ -3,6 +3,7 @@ return {
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {
+        labels = "abcdefghijklmnopqrstuvwxyz",
         label = {
             uppercase = false,
         },
@@ -21,6 +22,28 @@ return {
             mode = { "n", "x", "o" },
             function()
                 require("flash").jump()
+            end,
+            desc = "Flash"
+        },
+        {
+            "<leader>sf",
+            mode = { "n", "x", "o" },
+            function()
+                require("flash").jump({
+                    search = { forward = true, wrap = false, multi_window = false },
+                    highlight = { backdrop = false },
+                })
+            end,
+            desc = "Flash"
+        },
+        {
+            "<leader>st",
+            mode = { "n", "x", "o" },
+            function()
+                require("flash").jump({
+                    search = { forward = false, wrap = false, multi_window = false },
+                    highlight = { backdrop = false },
+                })
             end,
             desc = "Flash"
         },
