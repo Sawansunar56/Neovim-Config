@@ -51,14 +51,18 @@ map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
+map("i", "<M-d>", "<C-o>dw")
+map("i", "<C-r", "<C-o>x")
+
 map("i", "<C-b>", "<C-o>b")
 map("i", "<c-f>", "<C-o>w")
 
 map("i", "<C-h>", function()
     vim.api.nvim_input("<C-o>dT")
 end)
--- map("i", "<C-x>", "<C-o>dw")
--- map("i", "<C-c>", "<C-o>x")
+
+-- This is going to get me cancelled
+map("i", "<C-c>", "<Esc>")
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
@@ -69,8 +73,6 @@ map("n", "<leader>Y", [["+Y]])
 
 map({ "n", "v" }, "<leader>d", [["_d]])
 
--- This is going to get me cancelled
-map("i", "<C-c>", "<Esc>")
 
 map("n", "Q", "<nop>")
 map("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<CR>")
