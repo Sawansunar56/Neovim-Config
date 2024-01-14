@@ -53,5 +53,11 @@ return {
                 N = gen_ai_spec.number(),
             }
         })
+
+        vim.keymap.set("n", "<leader>ai",
+            function()
+                vim.g.miniai_disable = not vim.g.miniai_disable
+            end,
+            { desc = "toggle mini ai for global" })
     end
 }

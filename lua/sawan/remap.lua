@@ -113,8 +113,10 @@ map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
 map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("v", "<leader><leader>g",
+    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \|\)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("v", "<leader><leader>h",
-    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\);/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
+    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- map("n", "<leader><leader>c", ":lua Colors(\"\")<Left><Left>")
 
