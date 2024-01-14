@@ -46,14 +46,14 @@ return {
         { name = "buffer",  keyword_length = 3 },
         { name = "luasnip", keyword_length = 2 },
       },
-      mapping = {
+      mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.config.disable,
         ["<C-Space>"] = cmp.mapping.complete(),
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<Tab>'] = nil,
         ['<S-Tab>'] = nil
-      }
+      })
     })
   end
 }
