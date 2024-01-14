@@ -15,10 +15,10 @@ if vim.lsp.inlay_hint then
 end
 
 map("n", "<M-o>",
-function()
-    vim.api.nvim_input("<cmd>b " .. vim.v.count1 .. "<cr>")
-end,
-{ desc = "buffer jump" })
+    function()
+        vim.api.nvim_input("<cmd>b " .. vim.v.count1 .. "<cr>")
+    end,
+    { desc = "buffer jump" })
 
 if jit.os ~= "Linux" then
     map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
@@ -51,8 +51,8 @@ map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
-map("i", "<M-d>", "<C-o>dw")
-map("i", "<C-r", "<C-o>x")
+map("i", "<M-d>", "<C-o>dw", { desc = "Delete forward word" })
+map("i", "<C-r>", "<C-o>x", { desc = "Delete forward characters" })
 
 map("i", "<C-b>", "<C-o>b")
 map("i", "<c-f>", "<C-o>w")
