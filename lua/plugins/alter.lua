@@ -10,7 +10,7 @@ return {
         { "<leader>adf", function() require('alter'):ClearCurrentFile() end,    { desc = "Alter Clear Current file from project" } },
         { "<leader>adp", function() require('alter'):ClearCurrentProject() end, { desc = "Alter Clear Current Project from table" } },
         { "<leader>adt", function() require('alter'):ClearTable() end,          { desc = "Alter Clear Entire Table" } },
-        { "<leader>ss",  function() require('alter'):SaveConfig() end,          { desc = "Alter Save Config to File" } },
+        { "<leader>ass",  function() require('alter'):SaveConfig() end,          { desc = "Alter Save Config to File" } },
         { "<C-b>",       function() require('alter'):Alternate() end,           { desc = "Alter alternate file" } },
     },
     lazy = true,
