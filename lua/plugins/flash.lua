@@ -31,7 +31,7 @@ return {
             function()
                 require("flash").jump({
                     search = { forward = true, wrap = false, multi_window = false },
-                    highlight = { backdrop = false },
+                    -- highlight = { backdrop = false },
                 })
             end,
             desc = "Flash"
@@ -42,7 +42,7 @@ return {
             function()
                 require("flash").jump({
                     search = { forward = false, wrap = false, multi_window = false },
-                    highlight = { backdrop = false },
+                    -- highlight = { backdrop = false },
                 })
             end,
             desc = "Flash"
