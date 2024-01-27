@@ -52,7 +52,7 @@ map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
 map("i", "<M-d>", "<C-o>dw", { desc = "Delete forward word" })
-map("i", "<C-r>", "<C-o>x", { desc = "Delete forward characters" })
+map("i", "<C-r>", "<Del>", { desc = "Delete forward characters" })
 
 map("i", "<C-f>", function()
     vim.api.nvim_input("<C-o>dT")
