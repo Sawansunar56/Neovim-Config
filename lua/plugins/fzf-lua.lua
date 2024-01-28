@@ -33,7 +33,7 @@ return {
         { "<leader>mk",  "<cmd>FzfLua keymaps<cr>",                    desc = "FZF keymap" },
         { "<leader>mr",  "<cmd>FzfLua registers<cr>",                  desc = "FZF registers" },
         { "<leader>mh",  "<cmd>FzfLua highlights<cr>",                 desc = "FZF highlights" },
-        { "<leader>mq",  "<cmd>FzfLua quickfix<cr>",                   desc = "FZF quickfix" },
+        { "<leader>mqo", "<cmd>FzfLua quickfix<cr>",                   desc = "FZF quickfix" },
         { "<leader>mqs", "<cmd>FzfLua quickfix_stack<cr>",             desc = "FZF quickfix_stack" },
         { "<leader>ml",  "<cmd>FzfLua lines<cr>",                      desc = "FZF lines" },
         { "<leader>mbl", "<cmd>FzfLua blines<cr>",                     desc = "FZF buffer lines" },
@@ -43,6 +43,6 @@ return {
         "nvim-tree/nvim-web-devicons",
         { "junegunn/fzf", build = "./install --bin" } },
     config = function()
-        require('fzf-lua').setup({'max-perf'})
+        require('fzf-lua').setup({ 'max-perf' })
     end,
 }
