@@ -1,17 +1,17 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     version = false,
     event = { "BufReadPre", "BufNewFile" },
     build = function()
         require("nvim-treesitter.install").update({ with_sync = true })
     end,
     dependencies = {
-        ('RRethy/nvim-treesitter-textsubjects'),
-        ('nvim-treesitter/nvim-treesitter-textobjects'),
-        ('nvim-treesitter/nvim-treesitter-context'),
+        ("RRethy/nvim-treesitter-textsubjects"),
+        ("nvim-treesitter/nvim-treesitter-textobjects"),
+        ("nvim-treesitter/nvim-treesitter-context"),
     },
     config = function()
-        require 'nvim-treesitter.configs'.setup {
+        require "nvim-treesitter.configs".setup {
             -- A list of parser names, or "all" (the four listed parsers should always be installed)
             ensure_installed = { "c", "javascript", "typescript", "java", "cpp", "rust", "lua", "vim", "go", "vimdoc" },
 
@@ -19,7 +19,7 @@ return {
             sync_install = false,
 
             -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+            -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
             auto_install = true,
 
             highlight = {
@@ -39,11 +39,11 @@ return {
             },
             textsubjects = {
                 enable = true,
-                prev_selection = ',', -- (Optional) keymap to select the previous selection
+                prev_selection = ",", -- (Optional) keymap to select the previous selection
                 keymaps = {
-                    ['.'] = 'textsubjects-smart',
-                    ['a;'] = 'textsubjects-container-outer',
-                    ['i;'] = 'textsubjects-container-inner',
+                    ["."] = "textsubjects-smart",
+                    ["a;"] = "textsubjects-container-outer",
+                    ["i;"] = "textsubjects-container-inner",
                 },
             },
             textobjects = {
@@ -81,7 +81,7 @@ return {
                         ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
 
                         -- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-                        -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
+                        -- Below example nvim-treesitter"s `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
                         ["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
                         ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                     },
