@@ -31,10 +31,10 @@ return {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    init_selection = "<M-w>", -- maps in normal mode to init the node/scope selection
-                    node_incremental = "<M-w>", -- increment to the upper named parent
+                    init_selection = "<M-w>",     -- maps in normal mode to init the node/scope selection
+                    node_incremental = "<M-w>",   -- increment to the upper named parent
                     node_decremental = "<M-C-w>", -- decrement to the previous node
-                    scope_incremental = "<M-e>", -- increment to the upper scope (as defined in locals.scm)
+                    scope_incremental = "<M-e>",  -- increment to the upper scope (as defined in locals.scm)
                 }
             },
             textsubjects = {
@@ -42,7 +42,7 @@ return {
                 prev_selection = ',', -- (Optional) keymap to select the previous selection
                 keymaps = {
                     ['.'] = 'textsubjects-smart',
-                    [';'] = 'textsubjects-container-outer',
+                    ['a;'] = 'textsubjects-container-outer',
                     ['i;'] = 'textsubjects-container-inner',
                 },
             },
@@ -56,26 +56,56 @@ return {
                         --["ak"] = "@comment.outer",
                     }
                 },
+                swap = {
+                    enable = true,
+                    swap_next = {
+                        ["<leader>rna"] = "@parameter.inner", -- swap object property with next
+                        ["<leader>rn:"] = "@property.outer",  -- swap parameters/argument with next
+                        ["<leader>rnm"] = "@function.outer",  -- swap function with next
+                    },
+                    swap_previous = {
+                        ["<leader>rpa"] = "@parameter.inner", -- swap parameters/argument with prev
+                        ["<leader>rp:"] = "@property.outer",  -- swap object property with prev
+                        ["<leader>rpm"] = "@function.outer",  -- swap function with previous
+                    },
+                },
                 move = {
                     enable = true,
                     set_jumps = true, -- whether to set jumps in the jumplist
                     goto_next_start = {
-                        ["]p"] = "@parameter.inner",
-                        ["]m"] = "@function.outer",
-                        ["]]"] = "@class.outer",
+                        ["]p"] = { query = "@parameter.inner", desc = "Next parameter inner" },
+                        ["]f"] = { query = "@call.outer", desc = "Next function call start" },
+                        ["]m"] = { query = "@function.outer", desc = "Next method/function def start" },
+                        ["]c"] = { query = "@class.outer", desc = "Next class start" },
+                        ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
+                        ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
+
+                        -- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
+                        -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
+                        ["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+                        ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                     },
                     goto_next_end = {
-                        ["]M"] = "@function.outer",
-                        ["]["] = "@class.outer",
+                        ["]F"] = { query = "@call.outer", desc = "Next function call end" },
+                        ["]M"] = { query = "@function.outer", desc = "Next method/function def end" },
+                        ["]C"] = { query = "@class.outer", desc = "Next class end" },
+                        ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
+                        ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
                     },
                     goto_previous_start = {
-                        ["[p"] = "@parameter.inner",
-                        ["[m"] = "@function.outer",
-                        ["[["] = "@class.outer",
+                        ["[p"] = { query = "@parameter.inner", desc = "Prev parameter inner" },
+                        ["[f"] = { query = "@call.outer", desc = "Prev function call start" },
+                        ["[m"] = { query = "@function.outer", desc = "Prev method/function def start" },
+                        ["[c"] = { query = "@class.outer", desc = "Prev class start" },
+                        ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
+                        ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
                     },
                     goto_previous_end = {
-                        ["[M"] = "@function.outer",
-                        ["[]"] = "@class.outer",
+                        ["[M"] = { query = "@function.outer", desc = "prev function end" },
+                        ["[F"] = { query = "@call.outer", desc = "Prev function call end" },
+                        ["[C"] = { query = "@class.outer", desc = "Prev class end" },
+                        ["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
+                        ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
                     },
                 },
             },
