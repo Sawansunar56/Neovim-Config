@@ -1,5 +1,6 @@
 return {
   "junegunn/fzf.vim",
+  enabled = function() return jit.os ~= "Linux" end,
   keys = {
     { "<leader>xfz", "<cmd>Files<cr>",    desc = "fzf.vim files" },
     { "<leader>xmi", "<cmd>GFiles<cr>",   desc = "fzf.vim git files" },

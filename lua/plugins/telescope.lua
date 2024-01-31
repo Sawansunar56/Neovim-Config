@@ -2,13 +2,13 @@ return {
     "nvim-telescope/telescope.nvim",
     event = "VeryLazy",
     keys = {
-        { "<leader>tr",  "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
-        { "<leader>tj",  "<cmd>Telescope jumplist<cr>",        desc = "telescope jumplist" },
-        { "<leader>tqs", "<cmd>Telescope quickfixhistory<cr>", desc = "telescope quickfix history" },
-        { "<leader>tq",  "<cmd>Telescope quickfix<cr>",        desc = "telescope quickfix" },
-        { "<leader>tm",  "<cmd>Telescope marks<cr>",           desc = "telescope marks list " },
-        { "<leader>th",  "<cmd>Telescope highlights<cr>",      desc = "telescope highlights" },
-        { "<leader>to",  "<cmd>Telescope command_history<cr>", desc = "telescope command history" },
+        { "<leader>ter", "<cmd>Telescope registers<cr>",       desc = "telescope register list" },
+        { "<leader>tej", "<cmd>Telescope jumplist<cr>",        desc = "telescope jumplist" },
+        { "<leader>tes", "<cmd>Telescope quickfixhistory<cr>", desc = "telescope quickfix history" },
+        { "<leader>teq", "<cmd>Telescope quickfix<cr>",        desc = "telescope quickfix" },
+        { "<leader>tem", "<cmd>Telescope marks<cr>",           desc = "telescope marks list " },
+        { "<leader>teh", "<cmd>Telescope highlights<cr>",      desc = "telescope highlights" },
+        { "<leader>teo", "<cmd>Telescope command_history<cr>", desc = "telescope command history" },
         {
             "<leader>gr",
             "<cmd>Telescope lsp_references<cr>",
@@ -42,13 +42,16 @@ return {
             desc =
             "find files anywhere including no ignore and hidden files"
         },
-        { "<C-p>",      "<cmd>Telescope git_files<cr>",   desc = "Git Searches" },
-        { "<leader>pl", "<cmd>Telescope live_grep<cr>",   desc = "live grep all files" },
-        { "<leader>ht", "<cmd>Telescope help_tags<cr>",   desc = "search help" },
-        { "<leader>bb", "<cmd>Telescope buffers<cr>",     desc = "[ ] Find existing buffers" },
-        { "<leader>ke", "<cmd>Telescope keymaps<cr>",     desc = "Get all the keymaps" },
-        { "<leader>pg", "<cmd>Telescope grep_string<cr>", desc = "Find string from grep" },
-        { "<leader>pr", "<cmd>Telescope resume<cr>",      desc = "telescope resume previous picker" },
+        { "<C-p>",       "<cmd>Telescope git_files<cr>",                     desc = "Git Searches" },
+        { "<leader>pl",  "<cmd>Telescope live_grep<cr>",                     desc = "live grep all files" },
+        { "<leader>ht",  "<cmd>Telescope help_tags<cr>",                     desc = "search help" },
+        { "<leader>bb",  "<cmd>Telescope buffers<cr>",                       desc = "[ ] Find existing buffers" },
+        { "<leader>ke",  "<cmd>Telescope keymaps<cr>",                       desc = "Get all the keymaps" },
+        { "<leader>pg",  "<cmd>Telescope grep_string<cr>",                   desc = "Find string from grep" },
+        { "<leader>pr",  "<cmd>Telescope resume<cr>",                        desc = "telescope resume previous picker" },
+        { "<leader>tpd", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "telescope resume previous picker" },
+        { "<leader>tpf", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "telescope resume previous picker" },
+        { "<leader>tpw", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "telescope resume previous picker" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -67,24 +70,11 @@ return {
         end
 
         map("n", "<leader>s/", telescope_live_grep_open_files, { desc = "Search / in open Files" })
-        map("n", "<leader>wsd", function()
-            builtin.lsp_dynamic_workspace_symbols(theme.get_dropdown())
-        end, { desc = "dynamic workspace symbols" })
-        map("n", "<leader>wso", function()
-            builtin.lsp_document_symbols(theme.get_dropdown())
-        end, { desc = "lsp document symbols" })
-        map("n", "<leader>wsl", function()
-            builtin.lsp_workspace_symbols(theme.get_dropdown())
-        end, { desc = "workspace symbols" })
 
         map("n", "<leader>ps", function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") });
         end)
-        map("n", "<leader>pws", function()
-            local word = vim.fn.expand("<cword>")
-            builtin.grep_string({ search = word });
-        end)
-        map("n", "<leader>pWs", function()
+        map("n", "<leader>pw", function()
             local word = vim.fn.expand("<cWORD>")
             builtin.grep_string({ search = word });
         end)
