@@ -14,11 +14,6 @@ if vim.lsp.inlay_hint then
     end, { desc = "Toggle inlay Hints" })
 end
 
-map("n", "<M-o>",
-    function()
-        vim.api.nvim_input("<cmd>b " .. vim.v.count1 .. "<cr>")
-    end,
-    { desc = "buffer jump" })
 
 if jit.os ~= "Linux" then
     map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
@@ -55,7 +50,7 @@ map("i", "<M-d>", "<C-o>dw", { desc = "Delete forward word" })
 map("i", "<C-r>", "<Del>", { desc = "Delete forward characters" })
 
 map("i", "<C-f>", function()
-    vim.api.nvim_input("<C-o>dT")
+    vim.api.nvim_input("<Left><C-o>dT")
 end)
 
 -- This is going to get me cancelled
