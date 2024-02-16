@@ -1,5 +1,14 @@
+local fzf_branch = ""
+if jit.os == "Linux" then
+    fzf_branch = "main"
+else
+    fzf_branch = "windows"
+end
+
+
 return {
     "ibhagwan/fzf-lua",
+    branch = fzf_branch,
     lazy = true,
     -- enabled = function() return jit.os == "Linux" end,
     keys = {
