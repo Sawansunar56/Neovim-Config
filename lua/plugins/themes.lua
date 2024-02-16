@@ -42,6 +42,14 @@ return {
     {
         'folke/tokyonight.nvim',
         event = "VeryLazy",
+        config = function()
+            require("tokyonight").setup({
+                style = "moon",
+                on_colors = function(colors)
+                    colors.bg = "#16161e"
+                end,
+            })
+        end,
     },
     {
         'navarasu/onedark.nvim',

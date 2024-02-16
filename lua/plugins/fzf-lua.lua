@@ -1,7 +1,7 @@
 return {
     "ibhagwan/fzf-lua",
     lazy = true,
-    enabled = function() return jit.os == "Linux" end,
+    -- enabled = function() return jit.os == "Linux" end,
     keys = {
         { "<leader>fz",  "<cmd>FzfLua files<cr>",                      desc = "FZF files" },
         { "<leader>fg",  "<cmd>FzfLua git_files<cr>",                  desc = "FZF git files" },
