@@ -14,6 +14,9 @@ if vim.lsp.inlay_hint then
     end, { desc = "Toggle inlay Hints" })
 end
 
+-- pull out colors
+map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enable Colors" })
+
 
 if jit.os ~= "Linux" then
     map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })

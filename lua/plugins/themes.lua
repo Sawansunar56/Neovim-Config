@@ -1,47 +1,49 @@
+local cus_event = "User LazyColorscheme"
+
 return {
     -- {
     --     'stevearc/profile.nvim'
     -- },
     {
         'cpea2506/one_monokai.nvim',
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         "luisiacc/gruvbox-baby",
-        event = "VeryLazy"
+        event = cus_event,
     },
     {
         "scottmckendry/cyberdream.nvim",
-        event = "VeryLazy",
+        event = cus_event,
         config = function()
             require("cyberdream").setup({
-            -- Recommended - see "Configuring" below for more config options
-            transparent = true,
-            italic_comments = true,
-            hide_fillchars = true,
-            borderless_telescope = true,
-        })
+                -- Recommended - see "Configuring" below for more config options
+                transparent = true,
+                italic_comments = true,
+                hide_fillchars = true,
+                borderless_telescope = true,
+            })
         end
     },
     {
         'shaunsingh/moonlight.nvim',
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         'rebelot/kanagawa.nvim',
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         "loctvl842/monokai-pro.nvim",
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         "edeneast/nightfox.nvim",
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         'folke/tokyonight.nvim',
-        event = "VeryLazy",
+        event = cus_event,
         config = function()
             require("tokyonight").setup({
                 style = "moon",
@@ -53,7 +55,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        event = "VeryLazy",
+        event = cus_event,
         config = function()
             require('onedark').setup {
                 style = 'deep',
@@ -64,18 +66,17 @@ return {
     },
     {
         'Mofiqul/vscode.nvim',
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         "ellisonleao/gruvbox.nvim",
-        event = "VeryLazy",
+        event = cus_event,
 
     },
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        -- lazy = true,
-        event = "VeryLazy",
+        event = cus_event,
     },
     {
         'rose-pine/neovim',
@@ -86,7 +87,7 @@ return {
             vim.cmd.colorscheme("rose-pine")
         end
     },
-    { "bluz71/vim-nightfly-colors", name = "nightfly", event = "VeryLazy" },
-    { 'cryptomilk/nightcity.nvim',  version = '*',     event = "VeryLazy" },
-    { "tiagovla/tokyodark.nvim",    event = "VeryLazy" },
+    { "bluz71/vim-nightfly-colors", name = "nightfly", event = cus_event },
+    { 'cryptomilk/nightcity.nvim',  version = '*',     event = cus_event },
+    { "tiagovla/tokyodark.nvim",    event = cus_event },
 }
