@@ -49,9 +49,9 @@ return {
         { "<leader>ke",  "<cmd>Telescope keymaps<cr>",                       desc = "Get all the keymaps" },
         { "<leader>pg",  "<cmd>Telescope grep_string<cr>",                   desc = "Find string from grep" },
         { "<leader>pr",  "<cmd>Telescope resume<cr>",                        desc = "telescope resume previous picker" },
-        { "<leader>tpd", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "telescope resume previous picker" },
-        { "<leader>tpf", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "telescope resume previous picker" },
-        { "<leader>tpw", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "telescope resume previous picker" },
+        { "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "telescope document symbols" },
+        { "<leader>dw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "telescope dynamic workspace symbols" },
+        { "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "telescope workspace symbols" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -78,9 +78,13 @@ return {
             local word = vim.fn.expand("<cWORD>")
             builtin.grep_string({ search = word });
         end)
-        map("n", "<leader>td", function()
-            builtin.diagnostics(theme.get_dropdown { bufnr = 0, winblend = 10, previewer = false })
-        end, { desc = "telescope diagnostics for current buffer" })
+        map(
+            "n",
+            "<leader>td",
+            function()
+                builtin.diagnostics(theme.get_dropdown { bufnr = 0, winblend = 10, previewer = false })
+            end,
+            { desc = "telescope diagnostics for current buffer" })
         map("n", "<leader>/", function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
             builtin.current_buffer_fuzzy_find(theme.get_dropdown {
