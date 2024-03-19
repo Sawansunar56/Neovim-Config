@@ -22,6 +22,7 @@ return {
             typescript = { { "prettierd", "prettier" } },
             typescriptreact = { { "prettierd", "prettier" } },
             css = { { "prettierd", "prettier" } },
+            scss = { { "prettierd", "prettier" } },
             svelte = { { "prettierd", "prettier" } },
             go = { "golines", "gofumpt" },
         }

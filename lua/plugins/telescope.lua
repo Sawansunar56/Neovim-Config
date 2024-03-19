@@ -42,13 +42,13 @@ return {
             desc =
             "find files anywhere including no ignore and hidden files"
         },
-        { "<C-p>",       "<cmd>Telescope git_files<cr>",                     desc = "Git Searches" },
-        { "<leader>pl",  "<cmd>Telescope live_grep<cr>",                     desc = "live grep all files" },
-        { "<leader>ht",  "<cmd>Telescope help_tags<cr>",                     desc = "search help" },
-        { "<leader>bb",  "<cmd>Telescope buffers<cr>",                       desc = "[ ] Find existing buffers" },
-        { "<leader>ke",  "<cmd>Telescope keymaps<cr>",                       desc = "Get all the keymaps" },
-        { "<leader>pg",  "<cmd>Telescope grep_string<cr>",                   desc = "Find string from grep" },
-        { "<leader>pr",  "<cmd>Telescope resume<cr>",                        desc = "telescope resume previous picker" },
+        { "<C-p>",      "<cmd>Telescope git_files<cr>",                     desc = "Git Searches" },
+        { "<leader>pl", "<cmd>Telescope live_grep<cr>",                     desc = "live grep all files" },
+        { "<leader>ht", "<cmd>Telescope help_tags<cr>",                     desc = "search help" },
+        { "<leader>bb", "<cmd>Telescope buffers<cr>",                       desc = "[ ] Find existing buffers" },
+        { "<leader>ke", "<cmd>Telescope keymaps<cr>",                       desc = "Get all the keymaps" },
+        { "<leader>pg", "<cmd>Telescope grep_string<cr>",                   desc = "Find string from grep",              mode = { "n", "v" } },
+        { "<leader>pr", "<cmd>Telescope resume<cr>",                        desc = "telescope resume previous picker" },
         { "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "telescope document symbols" },
         { "<leader>dw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "telescope dynamic workspace symbols" },
         { "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "telescope workspace symbols" },
@@ -100,5 +100,10 @@ return {
                 }
             )
         end, { desc = "color scheme" })
+        map("n", "<leader>bf", function()
+            builtin.buffers({
+                sort_mru = true,
+            })
+        end, { desc = " " })
     end
 }
