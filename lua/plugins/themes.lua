@@ -13,6 +13,11 @@ return {
         event = cus_event,
     },
     {
+        "ellisonleao/gruvbox.nvim",
+        event = cus_event,
+
+    },
+    {
         "scottmckendry/cyberdream.nvim",
         event = cus_event,
         config = function()
@@ -67,11 +72,6 @@ return {
     {
         'Mofiqul/vscode.nvim',
         event = cus_event,
-    },
-    {
-        "ellisonleao/gruvbox.nvim",
-        event = cus_event,
-
     },
     {
         "catppuccin/nvim",
