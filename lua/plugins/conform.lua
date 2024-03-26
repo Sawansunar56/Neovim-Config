@@ -25,6 +25,7 @@ return {
             scss = { { "prettierd", "prettier" } },
             svelte = { { "prettierd", "prettier" } },
             go = { "golines", "gofumpt" },
+            markdown = { "mdslw" },
         }
     },
 }
