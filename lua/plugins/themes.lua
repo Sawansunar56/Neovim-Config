@@ -49,14 +49,14 @@ return {
     {
         'folke/tokyonight.nvim',
         event = cus_event,
-        config = function()
-            require("tokyonight").setup({
-                style = "moon",
-                on_colors = function(colors)
-                    colors.bg = "#16161e"
-                end,
-            })
-        end,
+        -- config = function()
+        --     require("tokyonight").setup({
+        --         style = "moon",
+        --         on_colors = function(colors)
+        --             colors.bg = "#16161e"
+        --         end,
+        --     })
+        -- end,
     },
     {
         'navarasu/onedark.nvim',

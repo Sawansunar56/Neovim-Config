@@ -3,7 +3,7 @@ return {
     lazy = true,
     branch = "harpoon2",
     keys = {
-        { "<leader>a", function() require('harpoon'):list():append() end,                                 desc = "Harpoon main file add" },
+        { "<leader>a", function() require('harpoon'):list():add() end,                                 desc = "Harpoon main file add" },
         { "<C-e>",     function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, desc = "Harpoon main Menu" },
         { "<C-n>",     function() require('harpoon'):list():select(1) end,                                desc = "Harpoon main select 1" },
         { "<C-m>",     function() require('harpoon'):list():select(2) end,                                desc = "Harpoon main select 2" },
