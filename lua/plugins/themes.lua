@@ -13,10 +13,45 @@ return {
         event = cus_event,
     },
     {
+        "oxfist/night-owl.nvim",
+        event = cus_event,
+    },
+    {
+        "craftzdog/solarized-osaka.nvim",
+        event = cus_event,
+    },
+    {
+        'comfysage/evergarden',
+        event = cus_event,
+    },
+    {
+        "olimorris/onedarkpro.nvim",
+        event = cus_event,
+    },
+    {
+        "neanias/everforest-nvim",
+        event = cus_event,
+    },
+    {
+        "ribru17/bamboo.nvim",
+        event = cus_event,
+    },
+    {
+        "eldritch-theme/eldritch.nvim",
+        event = cus_event,
+    },
+    {
+        "Mofiqul/dracula.nvim",
+        event = cus_event,
+
+    },
+    {
         "ellisonleao/gruvbox.nvim",
         event = cus_event,
 
     },
+
+
     {
         "scottmckendry/cyberdream.nvim",
         event = cus_event,
