@@ -26,6 +26,7 @@ return {
             svelte = { { "prettierd", "prettier" } },
             go = { "golines", "gofumpt" },
             markdown = { "mdslw" },
+            rust = { "rustfmt" },
         }
     },
 }

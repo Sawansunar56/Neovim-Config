@@ -8,11 +8,9 @@ local function flatter()
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
-if vim.lsp.inlay_hint then
-    map("n", "<leader>ih", function()
-        vim.lsp.inlay_hint(0, nil)
-    end, { desc = "Toggle inlay Hints" })
-end
+map("n", "<leader>ih", function()
+    vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay Hints" })
 
 -- pull out colors
 map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enable Colors" })

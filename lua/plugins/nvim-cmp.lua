@@ -77,6 +77,7 @@ return {
             performance = {
                 max_view_entries = 7
             },
+
             sources = preferred_sources,
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.config.disable,
