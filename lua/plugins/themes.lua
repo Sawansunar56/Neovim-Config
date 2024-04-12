@@ -9,6 +9,10 @@ return {
         event = cus_event,
     },
     {
+        "tjdevries/colorbuddy.nvim",
+        event = cus_event,
+    },
+    {
         "luisiacc/gruvbox-baby",
         event = cus_event,
     },
@@ -48,10 +52,7 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         event = cus_event,
-
     },
-
-
     {
         "scottmckendry/cyberdream.nvim",
         event = cus_event,
