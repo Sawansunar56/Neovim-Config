@@ -6,7 +6,7 @@ return {
   config = true,
   keys = {
     {
-      "<leader>xx",
+      "<M-y>",
       "<cmd>TroubleToggle<cr>",
       desc = "toggle trouble",
       silent = true,
