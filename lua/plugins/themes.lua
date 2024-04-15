@@ -9,10 +9,6 @@ return {
         event = cus_event,
     },
     {
-        "tjdevries/colorbuddy.nvim",
-        event = cus_event,
-    },
-    {
         "luisiacc/gruvbox-baby",
         event = cus_event,
     },
