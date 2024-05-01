@@ -49,4 +49,4 @@ require("lazy").setup("plugins", opts)
 -- end
 -- vim.keymap.set("", "<f1>", toggle_profile)
 
-vim.cmd.colorscheme("rose-pine")
+vim.cmd.colorscheme("tokyonight-night")
