@@ -2,8 +2,8 @@ return {
     "cbochs/grapple.nvim",
     opts = {
         scope = "git", -- also try out "git_branch"
-         icons = true,
-        quick_select = "123456789",
+        icons = true,
+        quick_select = "123456789zxcbnmZXVBNM,afghjklAFGHJKLwrtyuiopWRTYUIOP",
     },
     event = { "BufReadPost", "BufNewFile" },
     cmd = "Grapple",

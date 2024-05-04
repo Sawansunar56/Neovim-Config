@@ -2,10 +2,10 @@ local cus_event = "User LazyColorscheme"
 
 return {
     -- {
-    --     'stevearc/profile.nvim'
+    --     "stevearc/profile.nvim"
     -- },
     {
-        'cpea2506/one_monokai.nvim',
+        "cpea2506/one_monokai.nvim",
         event = cus_event,
     },
     {
@@ -21,7 +21,7 @@ return {
         event = cus_event,
     },
     {
-        'comfysage/evergarden',
+        "comfysage/evergarden",
         event = cus_event,
     },
     {
@@ -49,6 +49,10 @@ return {
         "ellisonleao/gruvbox.nvim",
         event = cus_event,
     },
+    -- {
+    --     "morhetz/gruvbox",
+    --     event = cus_event,
+    -- },
     {
         "scottmckendry/cyberdream.nvim",
         event = cus_event,
@@ -63,11 +67,11 @@ return {
         end
     },
     {
-        'shaunsingh/moonlight.nvim',
+        "shaunsingh/moonlight.nvim",
         event = cus_event,
     },
     {
-        'rebelot/kanagawa.nvim',
+        "rebelot/kanagawa.nvim",
         event = cus_event,
     },
     {
@@ -79,7 +83,7 @@ return {
         event = cus_event,
     },
     {
-        'folke/tokyonight.nvim',
+        "folke/tokyonight.nvim",
         event = cus_event,
         -- config = function()
         --     require("tokyonight").setup({
@@ -91,18 +95,18 @@ return {
         -- end,
     },
     {
-        'navarasu/onedark.nvim',
+        "navarasu/onedark.nvim",
         event = cus_event,
         config = function()
-            require('onedark').setup {
-                style = 'deep',
+            require("onedark").setup {
+                style = "deep",
                 toggle_style_key = "<leader>cr",
-                toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' },
+                toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer" },
             }
         end
     },
     {
-        'Mofiqul/vscode.nvim',
+        "Mofiqul/vscode.nvim",
         event = cus_event,
     },
     {
@@ -111,8 +115,8 @@ return {
         event = cus_event,
     },
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        "rose-pine/neovim",
+        name = "rose-pine",
         lazy = true,
         priority = 1000,
         config = function()
@@ -120,6 +124,6 @@ return {
         end
     },
     { "bluz71/vim-nightfly-colors", name = "nightfly", event = cus_event },
-    { 'cryptomilk/nightcity.nvim',  version = '*',     event = cus_event },
+    { "cryptomilk/nightcity.nvim",  version = "*",     event = cus_event },
     { "tiagovla/tokyodark.nvim",    event = cus_event },
 }
