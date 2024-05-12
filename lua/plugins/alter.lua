@@ -1,6 +1,6 @@
 return {
     'Sawansunar56/Alter',
-    -- dir = "/home/sawan/projects/luaPlugin/alter/",
+    -- dir = "/home/sawansunar/projects/Alter/",
     keys = {
         { "<leader>af",  function() require('alter'):AddFile() end,             desc = "Alter add file" },
         { "<leader>ac",  function() require('alter'):ConnectFile() end,         desc = "Alter connect file" },
@@ -12,6 +12,8 @@ return {
         { "<leader>adt", function() require('alter'):ClearTable() end,          desc = "Alter Clear Entire Table" },
         { "<leader>ass", function() require('alter'):SaveConfig() end,          desc = "Alter Save Config to File" },
         { "<C-b>",       function() require('alter'):Alternate() end,           desc = "Alter alternate file" },
+        { "<leader>al",       function() require('alter'):VSplit() end,           desc = "Alter split file" },
+        { "<leader>aj",       function() require('alter'):Split() end,           desc = "Alter split file" },
     },
     lazy = true,
     config = function()
