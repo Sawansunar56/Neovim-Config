@@ -53,3 +53,6 @@ opt.listchars = {
 }
 
 
+if vim.g.neovide then
+    opt.guifont = "JetBrainsMono Nerd Font Mono:h12"
+end
