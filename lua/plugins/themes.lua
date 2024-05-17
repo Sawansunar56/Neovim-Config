@@ -117,11 +117,11 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
-        lazy = true,
+        event = cus_event,
         priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("rose-pine")
-        end
+        -- config = function()
+        --     vim.cmd.colorscheme("rose-pine")
+        -- end
     },
     { "bluz71/vim-nightfly-colors", name = "nightfly", event = cus_event },
     { "cryptomilk/nightcity.nvim",  version = "*",     event = cus_event },
