@@ -1,6 +1,6 @@
 return {
     'Sawansunar56/Alter',
-    -- dir = "/home/sawansunar/projects/Alter/",
+    --dir = "/home/sawansunar/projects/Alter/",
     keys = {
         { "<leader>af",  function() require('alter'):AddFile() end,             desc = "Alter add file" },
         { "<leader>ac",  function() require('alter'):ConnectFile() end,         desc = "Alter connect file" },
@@ -12,8 +12,9 @@ return {
         { "<leader>adt", function() require('alter'):ClearTable() end,          desc = "Alter Clear Entire Table" },
         { "<leader>ass", function() require('alter'):SaveConfig() end,          desc = "Alter Save Config to File" },
         { "<C-b>",       function() require('alter'):Alternate() end,           desc = "Alter alternate file" },
-        { "<leader>al",       function() require('alter'):VSplit() end,           desc = "Alter split file" },
-        { "<leader>aj",       function() require('alter'):Split() end,           desc = "Alter split file" },
+        { "<leader>al",  function() require('alter'):InPlace() end,             desc = "Alter inplace c file" },
+        { "<leader>aj",  function() require('alter'):Split(true) end,           desc = "Alter horizontal split file" },
+        { "<leader>ak",  function() require('alter'):Split(false) end,          desc = "Alter vertical split file" },
     },
     lazy = true,
     config = function()
