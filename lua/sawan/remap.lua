@@ -94,12 +94,12 @@ map("n", "<C-w><up>", "<C-w>+")
 map("n", "<C-w><down>", "<C-w>-")
 
 -- buffer shit
-map("n", "<leader>bv", ":vnew<CR>", { desc = "buffer vertical open" })  -- closes the split
-map("n", "<leader>bh", ":new<CR>", { desc = "buffer horizontal open" }) -- closes the split
-map("n", "<leader>ba", ":buffers<CR>", { desc = "buffer list" })        -- closes the split
-map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" })  -- closes the split
-map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })          -- closes the split
-map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })      -- closes the split
+map("n", "<leader>bv", ":vnew<CR>", { desc = "buffer vertical open" })
+map("n", "<leader>bh", ":new<CR>", { desc = "buffer horizontal open" })
+map("n", "<leader>ba", ":buffers<CR>", { desc = "buffer list" })
+map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" })
+map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })
+map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })
 
 -- tab shit
 map("n", "<leader>ta", ":tabnew<CR>", { desc = "tab new" })
@@ -113,11 +113,3 @@ map("v", "<leader><leader>g",
 map("v", "<leader><leader>h",
     [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
--- map("n", "<leader><leader>c", ":lua Colors(\"\")<Left><Left>")
-
-map("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/lua/sawan/plugins.lua<CR>")
-
-
--- Something cool
--- function alternateFile()
--- end
