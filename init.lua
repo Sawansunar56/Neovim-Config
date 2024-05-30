@@ -1,3 +1,6 @@
+if vim.loader then
+    vim.loader.enable()
+end
 require("sawan")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
