@@ -11,5 +11,11 @@ return {
         end, desc = "toggle zen mode"}
     },
     opts = {
+        window = {
+            options = {
+                linebreak = true,
+                wrap = true
+            }
+        }
     }
 }
