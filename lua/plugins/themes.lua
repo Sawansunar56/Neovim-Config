@@ -9,6 +9,10 @@ return {
         event = cus_event,
     },
     {
+        "blazkowolf/gruber-darker.nvim",
+        event = cus_event,
+    },
+    {
         "luisiacc/gruvbox-baby",
         event = cus_event,
     },
