@@ -1,6 +1,6 @@
 return {
     "NvChad/nvim-colorizer.lua",
-    ft = { "jsx", "css", "scss" },
+    ft = { "lua", "jsx", "css", "scss" },
     opts = {
         user_default_options = {
             css = true,
