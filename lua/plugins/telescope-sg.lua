@@ -1,7 +1,7 @@
 return {
   "Marskey/telescope-sg",
   keys = {
-    { '<leader>pa', "<cmd>Telescope ast_grep<cr>", desc = "Find through ast_grep" },
+    { '<leader>pk', "<cmd>Telescope ast_grep<cr>", desc = "Find through ast_grep" },
   },
   lazy = true,
   config = function()
