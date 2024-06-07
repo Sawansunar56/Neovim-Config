@@ -108,6 +108,9 @@ map("n", "<leader>tx", ":tabclose<CR>", { desc = "tab close" })
 map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
 map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
 
+map("n", "<leader>e", ":20Lex<CR>", { desc = "netrw side panel" })
+map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>", { desc = "replace current word" })
+
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("v", "<leader><leader>g",
     [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \|\)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
