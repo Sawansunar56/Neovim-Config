@@ -33,7 +33,7 @@ return {
     local mappings = {
       { toggle_modes, '<leader>nvh', function() terminal.toggle('horizontal') end },
       { toggle_modes, '<leader>nvv', function() terminal.toggle('vertical') end },
-      { toggle_modes, '<A-t>',       function() terminal.toggle('float') end },
+      { toggle_modes, '<A-u>',       function() terminal.toggle('float') end },
     }
     local opts = { noremap = true, silent = true }
     for _, mapping in ipairs(mappings) do
