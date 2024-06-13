@@ -13,9 +13,8 @@ map("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay Hints" })
 
--- pull out colors
+-- Pull out themes 
 map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enable Colors" })
-
 
 if jit.os ~= "Linux" then
     map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
@@ -48,8 +47,8 @@ map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
-map("i", "<M-d>", "<C-o>dw", { desc = "Delete forward word" })
-map("i", "<C-r>", "<Del>", { desc = "Delete forward characters" })
+map("i", "<C-k>", "<C-o>de", { desc = "Delete forward word" })
+map("i", "<C-l>", "<Del>", { desc = "Delete forward characters" })
 
 map("i", "<C-f>", function()
     vim.api.nvim_input("<Left><C-o>dT")
@@ -61,12 +60,10 @@ map("i", "<C-c>", "<Esc>")
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
 map({ "n", "v" }, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 map({ "n", "v" }, "<leader>d", [["_d]])
-
 
 map("n", "Q", "<nop>")
 map("n", "<C-f>", "<cmd>silent !tmux neww ~/.local/bin/tmux-sessionizer<CR>")

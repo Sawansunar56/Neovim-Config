@@ -8,68 +8,41 @@ return {
         { 'saadparwaiz1/cmp_luasnip' }, -- Optional
         { 'hrsh7th/cmp-nvim-lua' },     -- Optional
         { 'L3MON4D3/LuaSnip' },
+        { 'rafamadriz/friendly-snippets' },
     },
     config = function()
         vim.keymap.set("n", "<leader>cm", function()
             require('cmp').setup({ enabled = false })
         end, { desc = "toggle cmp" })
 
-
-        require('lsp-zero').extend_cmp()
+        local lsp_zero = require('lsp-zero')
+        lsp_zero.extend_cmp()
 
         local cmp = require('cmp')
+        local cmp_action = lsp_zero.cmp_action()
 
+        -- Friendly snippets
         require('luasnip.loaders.from_vscode').lazy_load()
 
         local preferred_sources = {
-                { name = "luasnip" },
-                { name = "nvim_lsp" },
-                { name = "nvim_lua" },
-                { name = "path" },
-            }
-
-            local function tooBig(bufnr)
-                local max_filesize = 10 * 1024 -- 100 KB
-                local check_stats = (vim.uv or vim.loop).fs_stat
-                local ok, stats = pcall(check_stats, vim.api.nvim_buf_get_name(bufnr))
-                if ok and stats and stats.size > max_filesize then
-                    return true
-                else
-                    return false
-                end
-            end
-            vim.api.nvim_create_autocmd("BufRead", {
-                group = vim.api.nvim_create_augroup("CmpBufferDisableGrp", { clear = true }),
-                callback = function(ev)
-                    local sources = preferred_sources
-                    if not tooBig(ev.buf) then
-                        sources[#sources + 1] = { name = "buffer", keyword_length = 4 }
+            { name = "luasnip" },
+            { name = "nvim_lsp" },
+            { name = "nvim_lua" },
+            { name = "path" },
+            {
+                name = "buffer",
+                get_bufnrs = function()
+                    local buf = vim.api.nvim_get_current_buf()
+                    local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+                    if byte_size > 1024 * 1024 then -- 1 Megabyte max
+                        return {}
                     end
-                    cmp.setup.buffer({
-                        sources = cmp.config.sources(sources),
-                    })
-                end,
-            })
+                    return { buf }
+                end
+            },
+        }
 
         cmp.setup({
-            -- formatting = {
-            --   -- changing the order of fields so the icon is the first
-            --   fields = { 'menu', 'abbr', 'kind' },
-            --
-            --   -- here is where the change happens
-            --   format = function(entry, item)
-            --     local menu_icon = {
-            --       nvim_lsp = 'λ',
-            --       luasnip = '⋗',
-            --       buffer = 'Ω',
-            --       path = '🖫',
-            --       nvim_lua = 'Π',
-            --     }
-            --
-            --     item.menu = menu_icon[entry.source.name]
-            --     return item
-            --   end,
-            -- },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
@@ -84,9 +57,14 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<Tab>'] = nil,
-                ['<S-Tab>'] = nil
-            })
+                ['<Tab>'] = cmp_action.luasnip_jump_forward(),
+                ['<S-Tab>'] = cmp_action.luasnip_jump_backward(),
+            }),
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body)
+                end
+            }
         })
     end
 }
