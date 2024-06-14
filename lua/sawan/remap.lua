@@ -97,7 +97,8 @@ map("n", "<leader>bh", ":new<CR>", { desc = "buffer horizontal open" })
 map("n", "<leader>ba", ":buffers<CR>", { desc = "buffer list" })
 map("n", "<leader>bp", ":bprevious<CR>", { desc = "buffer previous" })
 map("n", "<leader>bn", ":bnext<CR>", { desc = "buffer next" })
-map("n", "<leader>bx", ":bdelete<CR>", { desc = "buffer delete" })
+map("n", "<leader>bxn", ":bdelete<CR>", { desc = "buffer delete" })
+map("n", "<leader>bxl", ":%bd|e#|bd#<CR>", { desc = "[X]Close [A]ll buffers but this one" })
 
 -- tab shit
 map("n", "<leader>ta", ":tabnew<CR>", { desc = "tab new" })
