@@ -17,12 +17,14 @@ return {
         { "<leader>ak",  function() require('alter'):Split(false) end,          desc = "Alter vertical split file" },
     },
     lazy = true,
-    opts = {
-        InPlace = {
-            vert = { "frag" },
-            frag = { "vert" },
-            jsx = { "css" },
-            css = { "js", "jsx" },
-        }
+    config = {
+        require('alter'):setup({
+            inPlace = {
+                css = { "jsx" },
+                jsx = { "css" },
+                vert = { "frag" },
+                frag = { "vert" }
+            }
+        })
     }
 }
