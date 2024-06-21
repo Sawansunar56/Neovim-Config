@@ -13,7 +13,7 @@ map("n", "<leader>ih", function()
     vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay Hints" })
 
--- Pull out themes 
+-- Pull out themes
 map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enable Colors" })
 
 if jit.os ~= "Linux" then
@@ -107,7 +107,10 @@ map("n", "<leader>tn", ":tabn<CR>", { desc = "tab next" })
 map("n", "<leader>tp", ":tabp<CR>", { desc = "tab previous" })
 
 map("n", "<leader>e", ":20Lex<CR>", { desc = "netrw side panel" })
-map("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>", { desc = "replace current word" })
+map("v", "<leader>rr", "\"hy:%s/<C-r>h//g<left><left>", { desc = "replace current word in the file" })
+map("v", "<leader>ri", "\"hy:%s/<C-r>h//gc<left><left><left>", { desc = "replace current word in the file confirmation" })
+map("v", "<leader>rG", "\"hy:.,$s/<C-r>h//g<left><left>", { desc = "replace current word from the cursor to the end" })
+map("v", "<leader>rgg", "\"hy:1,.s/<C-r>h//g<left><left>", { desc = "replace current word from start to the cursor" })
 
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("v", "<leader><leader>g",
