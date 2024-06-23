@@ -23,13 +23,17 @@ return {
                     alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
                     -- signs = false, -- configure signs for some keywords individually
                 },
+                CLEANUP = {
+                    icon = " ",
+                    color = "cleanup",
+                    alt = { "CLEAN", }
+                },
                 TODO = { icon = " ", color = "info" },
                 HACK = { icon = " ", color = "warning" },
                 WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
                 PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
                 NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
                 TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-                -- TEST:
             },
             gui_style = {
                 fg = "NONE",       -- The gui style to use for the fg highlight group.
@@ -61,6 +65,7 @@ return {
                 default = { "#bb9af7" },
                 hint = { "#66fad5" },
                 test = { "#10B981" },
+                cleanup = { "#8ddb51" },
             },
             search = {
                 command = "rg",
