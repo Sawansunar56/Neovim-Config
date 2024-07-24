@@ -112,7 +112,8 @@ map("v", "<leader>ri", "\"hy:%s/<C-r>h//gc<left><left><left>", { desc = "replace
 map("v", "<leader>rG", "\"hy:.,$s/<C-r>h//g<left><left>", { desc = "replace current word from the cursor to the end" })
 map("v", "<leader>rgg", "\"hy:1,.s/<C-r>h//g<left><left>", { desc = "replace current word from start to the cursor" })
 
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>si", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "replace cur word only in the file (case sensitive)" })
 map("v", "<leader><leader>g",
     [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \|\)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("v", "<leader><leader>h",
