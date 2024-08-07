@@ -45,7 +45,7 @@ return {
         { "<C-p>",      "<cmd>Telescope git_files<cr>",                     desc = "Git Searches" },
         { "<leader>pl", "<cmd>Telescope live_grep<cr>",                     desc = "live grep all files" },
         { "<leader>ht", "<cmd>Telescope help_tags<cr>",                     desc = "search help" },
-        { "<leader>bb", "<cmd>Telescope buffers<cr>",                       desc = "[ ] Find existing buffers" },
+        { "<C-b>", "<cmd>Telescope buffers<cr>",                       desc = "[ ] Find existing buffers" },
         { "<leader>ke", "<cmd>Telescope keymaps<cr>",                       desc = "Get all the keymaps" },
         { "<leader>pg", "<cmd>Telescope grep_string<cr>",                   desc = "Find string from grep",              mode = { "n", "v" } },
         { "<leader>pr", "<cmd>Telescope resume<cr>",                        desc = "telescope resume previous picker" },

@@ -11,7 +11,7 @@ return {
         { "<leader>adp", function() require('alter'):ClearCurrentProject() end, desc = "Alter Clear Current Project from table" },
         { "<leader>adt", function() require('alter'):ClearTable() end,          desc = "Alter Clear Entire Table" },
         { "<leader>ass", function() require('alter'):SaveConfig() end,          desc = "Alter Save Config to File" },
-        { "<C-b>",       function() require('alter'):Alternate() end,           desc = "Alter alternate file" },
+        { "<leader>ah",  function() require('alter'):Alternate() end,           desc = "Alter alternate file" },
         { "<leader>al",  function() require('alter'):InPlace() end,             desc = "Alter inplace c file" },
         { "<leader>aj",  function() require('alter'):Split(true) end,           desc = "Alter horizontal split file" },
         { "<leader>ak",  function() require('alter'):Split(false) end,          desc = "Alter vertical split file" },
