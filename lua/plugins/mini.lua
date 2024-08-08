@@ -69,6 +69,8 @@ return {
         require("mini.operators").setup()
         require("mini.pick").setup()
 
+        -- require("mini.git").setup()
+
         require('mini.splitjoin').setup({
             mappings = {
                 toggle = 'gS',
