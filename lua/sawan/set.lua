@@ -54,7 +54,6 @@ opt.listchars = {
     nbsp = "☠"
 }
 
-
 if vim.g.neovide then
     if vim.loop.os_uname().sysname == "Windows_NT" then
         opt.guifont = "JetBrainsMono Nerd Font Mono:h12"

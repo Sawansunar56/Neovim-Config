@@ -9,7 +9,25 @@ return {
         event = cus_event,
     },
     {
+        "rockyzhang24/arctic.nvim",
+        branch = "v2",
+        dependencies = { "rktjmp/lush.nvim" },
+        event = cus_event,
+    },
+    {
+        "dgox16/oldworld.nvim",
+        event = cus_event,
+    },
+    {
+        "savq/melange-nvim",
+        event = cus_event,
+    },
+    {
         "blazkowolf/gruber-darker.nvim",
+        event = cus_event,
+    },
+    {
+        "sainnhe/gruvbox-material",
         event = cus_event,
     },
     {
@@ -37,6 +55,23 @@ return {
         event = cus_event,
     },
     {
+        "xero/miasma.nvim",
+        event = cus_event,
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        event = cus_event,
+    },
+    {
+        "Yazeed1s/minimal.nvim",
+        event = cus_event,
+    },
+    -- {
+    --     "2giosangmitom/nightfall.nvim",
+    --     event = cus_event,
+    -- },
+    {
         "ribru17/bamboo.nvim",
         event = cus_event,
     },
@@ -52,6 +87,9 @@ return {
     {
         "ellisonleao/gruvbox.nvim",
         event = cus_event,
+        opts = {
+            contrast = "hard"
+        }
     },
     -- {
     --     "morhetz/gruvbox",
@@ -60,15 +98,13 @@ return {
     {
         "scottmckendry/cyberdream.nvim",
         event = cus_event,
-        config = function()
-            require("cyberdream").setup({
-                -- Recommended - see "Configuring" below for more config options
-                transparent = true,
-                italic_comments = true,
-                hide_fillchars = true,
-                borderless_telescope = true,
-            })
-        end
+        opts = {
+            -- Recommended - see "Configuring" below for more config options
+            transparent = true,
+            italic_comments = true,
+            hide_fillchars = true,
+            borderless_telescope = true,
+        }
     },
     {
         "shaunsingh/moonlight.nvim",
