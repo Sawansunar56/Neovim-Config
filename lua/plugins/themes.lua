@@ -23,11 +23,24 @@ return {
         event = cus_event,
     },
     {
-        "blazkowolf/gruber-darker.nvim",
+        "xero/miasma.nvim",
+        event = cus_event,
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        event = cus_event,
+    },
+    {
+        "Yazeed1s/minimal.nvim",
         event = cus_event,
     },
     {
         "sainnhe/gruvbox-material",
+        event = cus_event,
+    },
+    {
+        "blazkowolf/gruber-darker.nvim",
         event = cus_event,
     },
     {
@@ -52,19 +65,6 @@ return {
     },
     {
         "neanias/everforest-nvim",
-        event = cus_event,
-    },
-    {
-        "xero/miasma.nvim",
-        event = cus_event,
-    },
-    {
-        "bluz71/vim-moonfly-colors",
-        name = "moonfly",
-        event = cus_event,
-    },
-    {
-        "Yazeed1s/minimal.nvim",
         event = cus_event,
     },
     -- {
