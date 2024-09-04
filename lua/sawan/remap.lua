@@ -23,7 +23,6 @@ if jit.os ~= "Linux" then
     map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
 end
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to netrw" })
--- map("i", "<c-s>o", "<c-o>O", { desc = "enter into up from anywhere in the line"})
 -- map("i", "<c-s><cr>", "<c-o>o", { desc = "enter anywhere from the file"})
 map("n", "<Leader><Leader>f", flatter, { desc = "completely removes the background colors" })
 -- For increments and decrements  in numbers
@@ -31,7 +30,6 @@ map({ "n", "v" }, "<leader>+", "<C-a>", { desc = "increment numbers" })
 map({ "n", "v" }, "g+", "g<C-a>", { desc = "increment continuous numbers" })
 map({ "n", "v" }, "<leader>-", "<C-x>", { desc = "decrement numbers" })
 map({ "n", "v" }, "g-", "g<C-x>", { desc = "decrement continous numbers" })
-
 
 -- moving lines above and below in visual mode
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -56,6 +54,7 @@ end)
 
 -- This is going to get me cancelled
 map("i", "<C-c>", "<Esc>")
+map("i", "<c-s>l", "<c-o>D", { desc = "delete end to line"})
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])

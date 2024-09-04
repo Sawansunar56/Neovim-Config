@@ -27,6 +27,7 @@ opt.swapfile = false
 opt.backup = false
 if vim.loop.os_uname().sysname == "Windows_NT" then
     opt.undodir = vim.fn.expand('~/.vim/undodir')
+    vim.g.undotree_DiffCommand = "FC"
 else
     opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 end
@@ -57,7 +58,7 @@ opt.listchars = {
 if vim.g.neovide then
     if vim.loop.os_uname().sysname == "Windows_NT" then
         opt.guifont = "JetBrainsMono Nerd Font Mono:h12"
-    else 
+    else
         opt.guifont = "JetBrainsMono Nerd Font Mono:h11"
     end
 end

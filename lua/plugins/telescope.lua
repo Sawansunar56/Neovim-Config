@@ -100,7 +100,7 @@ return {
                 }
             )
         end, { desc = "color scheme" })
-        map("n", "<leader>bf", function()
+        map("n", "<leader>we", function()
             builtin.buffers({
                 sort_mru = true,
             })

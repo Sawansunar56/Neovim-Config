@@ -16,7 +16,4 @@ return {
         { "<leader>xmc", "<cmd>Commands<cr>", desc = "fzf.vim commands" },
         { "<leader>xmk", "<cmd>Maps<cr>",     desc = "fzf.vim keymaps" },
     },
-    dependencies = {
-        { "junegunn/fzf", build = "./install --bin" }
-    },
 }

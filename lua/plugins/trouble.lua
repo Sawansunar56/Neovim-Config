@@ -1,65 +1,63 @@
 return {
   'folke/trouble.nvim',
   -- event = "VeryLazy",
-  lazy = true,
+  opts ={},
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = true,
   keys = {
     {
-      "<M-y>",
-      "<cmd>TroubleToggle<cr>",
+      "<leader>xu",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "TroubleToggle xx diagnostics",
+    },
+    {
+      "<leader>xo",
+      "<cmd>Trouble dignostics toggle filter.buf=0<cr>",
+      desc = "TroubleToggle diagnostics current buffer ",
+    },
+    {
+      "<leader>xr",
+      "<cmd>Trouble lsp_references toggle<cr>",
+      desc = "Trouble Lsp References",
+    },
+    {
+      "<leader>xi",
+      "<cmd>Trouble lsp_implementations toggle<cr>",
+      desc = "Trouble Lsp implementations",
+    },
+    {
+      "<leader>xt",
+      "<cmd>Trouble lsp_type_definitions toggle<cr>",
+      desc = "Trouble Lsp Type Definitions",
+    },
+    {
+      "<leader>xn",
+      "<cmd>Trouble lsp_definitions toggle<cr>",
+      desc = "Trouble Lsp Definitions"
+    },
+    {
+      "<leader>xm",
+      "<cmd>Trouble lsp_declarations toggle<cr>",
       desc = "toggle trouble",
-      silent = true,
-      noremap = true
-    },
-    {
-      "<leader>xw",
-      "<cmd>TroubleToggle workspace_diagnostics<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle workscpace diagnostics",
-    },
-    {
-      "<leader>xd",
-      "<cmd>TroubleToggle document_diagnostics<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle Document Diagnostics",
     },
     {
       "<leader>xl",
-      "<cmd>TroubleToggle loclist<cr>",
-      silent = true,
-      noremap = true,
+      "<cmd>Trouble loclist toggle<cr>",
       desc = "TroubleToggle Location List",
     },
     {
-      "<leader>xq",
-      "<cmd>TroubleToggle quickfix<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle quickfix",
+      "<leader>xk",
+      "<cmd>Trouble quickfix toggle<cr>",
+      desc = "Trouble quickfix",
     },
     {
-      "gR",
-      "<cmd>TroubleToggle lsp_references<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle Lsp Lsp References",
+      "<leader>xj",
+      "<cmd>Trouble lsp_document_symbols toggle<cr>",
+      desc = "Trouble lsp document symbols",
     },
     {
-      "<leader>xgt",
-      "<cmd>TroubleToggle lsp_type_definitions<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle Lsp Type Definitions",
-    },
-    {
-      "<leader>xgd",
-      "<cmd>TroubleToggle lsp_definitions<cr>",
-      silent = true,
-      noremap = true,
-      desc = "TroubleToggle Lsp Definitions"
+      "<leader>xw",
+      "<cmd>Trouble symbols toggle<cr>",
+      desc = "Trouble symbol",
     },
   }
 }

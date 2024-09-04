@@ -1,7 +1,6 @@
 return {
     'hrsh7th/nvim-cmp', -- Required
     event = 'InsertEnter',
-    version = false,
     dependencies = {
         { 'hrsh7th/cmp-buffer' },       -- Optional
         { 'hrsh7th/cmp-path' },         -- Optional
@@ -15,11 +14,8 @@ return {
             require('cmp').setup({ enabled = false })
         end, { desc = "toggle cmp" })
 
-        local lsp_zero = require('lsp-zero')
-        lsp_zero.extend_cmp()
-
         local cmp = require('cmp')
-        local cmp_action = lsp_zero.cmp_action()
+        local cmp_action = require('lsp-zero').cmp_action()
 
         -- Friendly snippets
         require('luasnip.loaders.from_vscode').lazy_load()
@@ -29,28 +25,17 @@ return {
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = "path" },
-            {
-                name = "buffer",
-                get_bufnrs = function()
-                    local buf = vim.api.nvim_get_current_buf()
-                    local byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
-                    if byte_size > 1024 * 1024 then -- 1 Megabyte max
-                        return {}
-                    end
-                    return { buf }
-                end
-            },
+            { name = "buffer" },
         }
 
         cmp.setup({
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-            performance = {
-                max_view_entries = 7
-            },
-
+            -- window = {
+            --     completion = cmp.config.window.bordered(),
+            --     documentation = cmp.config.window.bordered(),
+            -- },
+            -- performance = {
+            --     max_view_entries = 7
+            -- },
             sources = preferred_sources,
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.config.disable,

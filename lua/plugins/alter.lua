@@ -20,10 +20,13 @@ return {
     config = function()
         require('alter'):setup({
             inPlace = {
+                cpp = { "h", "hpp", "inl" },
+                h = { "cpp", "c", "inl" },
+                inl = { "h", "hpp", "cpp" },
                 css = { "jsx" },
                 jsx = { "css" },
                 vert = { "frag" },
-                frag = { "vert" }
+                frag = { "vert" },
             }
         })
     end
