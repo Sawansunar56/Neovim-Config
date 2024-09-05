@@ -20,12 +20,13 @@ return {
 
         local lsp_attach = function(client, bufnr)
             local map = vim.keymap.set
+            client.server_capabilities.semanticTokensProvider = nil
             if client.name == "md" then
                 vim.cmd [[LspStop]]
             end
 
             map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { buffer = bufnr, desc = "lsp definition" })
-            map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cd>", { buffer = bufnr, desc = "lsp declaration" })
+            map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { buffer = bufnr, desc = "lsp declaration" })
             map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { buffer = bufnr, desc = "lsp implementation" })
             map("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { buffer = bufnr, desc = "lsp type definition" })
             map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { buffer = bufnr, desc = "lsp hover" })
