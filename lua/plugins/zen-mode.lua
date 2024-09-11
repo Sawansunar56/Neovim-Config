@@ -7,7 +7,7 @@ return {
             function()
                 require("zen-mode").toggle({
                     window = {
-                        width = 100
+                        width = .8
                     }
                 })
             end,
@@ -18,6 +18,7 @@ return {
             function()
                 require("zen-mode").toggle({
                     window = {
+                        width = 1.0,
                         options = {
                             linebreak = false,
                             wrap = false

@@ -20,7 +20,6 @@ return {
 
         local lsp_attach = function(client, bufnr)
             local map = vim.keymap.set
-            client.server_capabilities.semanticTokensProvider = nil
             if client.name == "md" then
                 vim.cmd [[LspStop]]
             end
@@ -60,14 +59,26 @@ return {
 
         require("lspconfig").glsl_analyzer.setup {}
 
+        require("lspconfig").clangd.setup({
+            InlayHints = {
+                Enabled = true,
+            },
+            filetypes = {
+                "c", "cpp", "inl"
+            },
+            cmd = {
+                "clangd",
+                "--offset-encoding=utf-16",
+                "--header-insertion=never",
+            },
+        })
         require('mason').setup({})
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "tsserver",
                 "rust_analyzer",
                 "lua_ls",
                 "gopls",
-                "clangd"
+                -- "clangd"
             },
             handlers = {
                 function(server_name)
@@ -123,21 +134,21 @@ return {
                         }
                     })
                 end,
-                clangd = function()
-                    require("lspconfig").clangd.setup({
-                        InlayHints = {
-                            Enabled = true,
-                        },
-                        filetypes = {
-                            "c", "cpp", "inl"
-                        },
-                        cmd = {
-                            "clangd",
-                            "--offset-encoding=utf-16",
-                            "--header-insertion=never",
-                        },
-                    })
-                end,
+                -- clangd = function()
+                --     require("lspconfig").clangd.setup({
+                --         InlayHints = {
+                --             Enabled = true,
+                --         },
+                --         filetypes = {
+                --             "c", "cpp", "inl"
+                --         },
+                --         cmd = {
+                --             "clangd",
+                --             "--offset-encoding=utf-16",
+                --             "--header-insertion=never",
+                --         },
+                --     })
+                -- end,
             },
         })
     end,
