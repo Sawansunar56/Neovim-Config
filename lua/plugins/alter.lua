@@ -23,10 +23,11 @@ return {
                 cpp = { "h", "hpp", "inl" },
                 h = { "cpp", "c", "inl" },
                 inl = { "h", "hpp", "cpp" },
-                css = { "jsx" },
-                jsx = { "css" },
-                vert = { "frag" },
-                frag = { "vert" },
+                css = { "jsx", "tsx", "js", "ts" },
+                tsx = { "css", "scss" },
+                jsx = { "css", "scss" },
+                vert = { "frag", "glsl" },
+                frag = { "vert", "glsl" },
             }
         })
     end
