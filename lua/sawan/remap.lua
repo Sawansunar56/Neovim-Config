@@ -48,6 +48,9 @@ map("i", "<M-l>", "<Right>")
 map("i", "<C-k>", "<C-o>de", { desc = "Delete forward word" })
 map("i", "<C-l>", "<Del>", { desc = "Delete forward characters" })
 
+map("v", "<leader>fi", "y/<C-r>\"", { desc = "search selected text"})
+
+-- greatest shortcut to live by. can't live without it. 
 map("i", "<C-f>", function()
     vim.api.nvim_input("<Left><C-o>dT")
 end)
