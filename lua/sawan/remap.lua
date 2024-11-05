@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+vim.g.stop_lsp = false
 local map = vim.keymap.set
 
 -- Function sections
@@ -39,6 +40,8 @@ map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
+
+map("n", "<leader>sk", ":lua vim.g.stop_lsp=not vim.g.stop_lsp<cr>", {desc = "toggle lsp"})
 
 map("i", "<M-j>", "<Down>")
 map("i", "<M-h>", "<Left>")

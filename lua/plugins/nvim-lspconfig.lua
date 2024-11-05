@@ -20,7 +20,7 @@ return {
 
         local lsp_attach = function(client, bufnr)
             local map = vim.keymap.set
-            if client.name == "md" then
+            if client.name == "md" or vim.g.stop_lsp then
                 vim.cmd [[LspStop]]
             end
 
