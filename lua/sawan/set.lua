@@ -57,6 +57,12 @@ opt.listchars = {
     nbsp = "☠"
 }
 
+-- vim.cmd [[
+-- set makeprg=mstart_and_build
+-- set errorformat=\ %#%f(%l)\ :\ %#%t%[A-z]%#\ %[A-Z\ ]%#%n:\ %m
+-- ]]
+
+
 -- vim.o.shell = "pwsh"
 
 -- if vim.g.neovide then
