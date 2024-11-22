@@ -58,7 +58,11 @@ return {
 
         --- mini files
         require("mini.extra").setup()
-        require("mini.files").setup()
+        require("mini.files").setup({
+            options = {
+                use_as_default_explorer = false,
+            }
+        })
         require("mini.jump").setup()
         require("mini.jump2d").setup({
             mappings = {
