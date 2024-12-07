@@ -60,11 +60,6 @@ end)
 
 map("t", "<C-s>", [[<C-\><C-n>]], { desc = "get out of terminal mode to normal mode"})
 
--- maybe make a plugin out of it.
--- map("n", "<leader>gk", function()
---     vim.api.nvim_input("yiW<M-u>:<C-f>ie <Esc>pA<C-h><C-h><Esc>F(r|0f.xi<cr>")
--- end, { desc = "jump to file" })
---
 -- vim.cmd[[set path+=./**]]
 
 -- This is going to get me cancelled

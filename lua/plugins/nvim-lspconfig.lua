@@ -59,19 +59,19 @@ return {
 
         require("lspconfig").glsl_analyzer.setup {}
 
-        require("lspconfig").clangd.setup({
-            InlayHints = {
-                Enabled = true,
-            },
-            filetypes = {
-                "c", "cpp", "inl"
-            },
-            cmd = {
-                "clangd",
-                "--offset-encoding=utf-16",
-                "--header-insertion=never",
-            },
-        })
+        -- require("lspconfig").clangd.setup({
+        --     InlayHints = {
+        --         Enabled = true,
+        --     },
+        --     filetypes = {
+        --         "c", "cpp", "inl"
+        --     },
+        --     cmd = {
+        --         "clangd",
+        --         "--offset-encoding=utf-16",
+        --         "--header-insertion=never",
+        --     },
+        -- })
         require('mason').setup({})
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -134,21 +134,21 @@ return {
                         }
                     })
                 end,
-                -- clangd = function()
-                --     require("lspconfig").clangd.setup({
-                --         InlayHints = {
-                --             Enabled = true,
-                --         },
-                --         filetypes = {
-                --             "c", "cpp", "inl"
-                --         },
-                --         cmd = {
-                --             "clangd",
-                --             "--offset-encoding=utf-16",
-                --             "--header-insertion=never",
-                --         },
-                --     })
-                -- end,
+                clangd = function()
+                    require("lspconfig").clangd.setup({
+                        InlayHints = {
+                            Enabled = true,
+                        },
+                        filetypes = {
+                            "c", "cpp", "inl"
+                        },
+                        cmd = {
+                            "clangd",
+                            "--offset-encoding=utf-16",
+                            "--header-insertion=never",
+                        },
+                    })
+                end,
             },
         })
     end,
