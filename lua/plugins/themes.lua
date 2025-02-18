@@ -27,6 +27,10 @@ return {
         event = cus_event,
     },
     {
+      "Tsuzat/NeoSolarized.nvim",
+      event = cus_event,
+    },
+    {
         "bluz71/vim-moonfly-colors",
         name = "moonfly",
         event = cus_event,
