@@ -19,6 +19,10 @@ return {
         event = cus_event,
     },
     {
+        "alljokecake/naysayer-theme.nvim",
+        event = cus_event,
+    },
+    {
         "savq/melange-nvim",
         event = cus_event,
     },
