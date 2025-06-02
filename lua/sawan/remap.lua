@@ -5,23 +5,23 @@ local map = vim.keymap.set
 
 -- Function sections
 local function flatter()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
 
 map("n", "<leader>ih", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay Hints" })
 
 -- Pull out themes
 map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enable Colors" })
 
 if jit.os ~= "Linux" then
-    map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
-    map("n", "<C-k>", "<C-w>k", { desc = "go to up buffer" })
-    map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
-    map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
+  map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
+  map("n", "<C-k>", "<C-w>k", { desc = "go to up buffer" })
+  map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
+  map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
 end
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to netrw" })
 -- map("i", "<c-s><cr>", "<c-o>o", { desc = "enter anywhere from the file"})
@@ -41,7 +41,7 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("n", "<leader>sk", ":lua vim.g.stop_lsp=not vim.g.stop_lsp<cr>", {desc = "toggle lsp"})
+map("n", "<leader>sk", ":lua vim.g.stop_lsp=not vim.g.stop_lsp<cr>", { desc = "toggle lsp" })
 
 map("i", "<M-j>", "<Down>")
 map("i", "<M-h>", "<Left>")
@@ -51,20 +51,24 @@ map("i", "<M-l>", "<Right>")
 map("i", "<C-k>", "<C-o>de", { desc = "Delete forward word" })
 map("i", "<C-l>", "<Del>", { desc = "Delete forward characters" })
 
-map("v", "<leader>fi", "y/<C-r>\"", { desc = "search selected text"})
+map("v", "<leader>fu", "y/<C-r>\"\\C", { desc = "search exact selected text" })
+map("v", "<leader>fo", "y/<C-r>\"", { desc = "search selected text" })
+map("v", "<leader>fi", "y/\\<<C-r>\"\\>", { desc = "search only selected text" })
+map("v", "<leader>fp", "y/\\<<C-r>\"\\>\\C", { desc = "search only exact selected text" })
+map("n", "<leader>fi", "y/\\<\\><left><left>", { desc = "search only selected text" })
 
--- greatest shortcut to live by. can't live without it. 
+-- greatest shortcut to live by. can't live without it.
 map("i", "<C-f>", function()
-    vim.api.nvim_input("<Left><C-o>dT")
+  vim.api.nvim_input("<Left><C-o>dT")
 end)
 
-map("t", "<C-s>", [[<C-\><C-n>]], { desc = "get out of terminal mode to normal mode"})
+map("t", "<C-s>", [[<C-\><C-n>]], { desc = "get out of terminal mode to normal mode" })
 
 -- vim.cmd[[set path+=./**]]
 
 -- This is going to get me cancelled
 map("i", "<C-c>", "<Esc>")
-map("i", "<c-s>l", "<c-o>D", { desc = "delete end to line"})
+map("i", "<c-s>l", "<c-o>D", { desc = "delete end to line" })
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
@@ -122,9 +126,9 @@ map("v", "<leader>rG", "\"hy:.,$s/<C-r>h//g<left><left>", { desc = "replace curr
 map("v", "<leader>rgg", "\"hy:1,.s/<C-r>h//g<left><left>", { desc = "replace current word from start to the cursor" })
 
 map("n", "<leader>si", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "replace cur word only in the file (case sensitive)" })
+  { desc = "replace cur word only in the file (case sensitive)" })
 map("v", "<leader><leader>g",
-    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \|\)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
+  [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \|\)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("v", "<leader><leader>h",
-    [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
+  [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
