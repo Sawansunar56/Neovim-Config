@@ -31,10 +31,10 @@ return {
                 TODO = { icon = " ", color = "info" },
                 HACK = { icon = " ", color = "warning" },
                 WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-                IDEA = { icon = " ", },
                 PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
                 NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
                 TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+                THINK = { icon = "", color = "think", alt = { "PLAN", "THOUGHT", "THINKING", "IDEA" } },
             },
             gui_style = {
                 fg = "NONE",       -- The gui style to use for the fg highlight group.
@@ -59,6 +59,7 @@ return {
             },
             -- list of named colors where we try to extract the guifg from the
             -- list of highlight groups or use the hex color if hl not found as a fallback
+            -- #a29bfe, #7f9ea0, #87ceeb, #b497d6, #5eaaa8
             colors = {
                 error = { "#DC2626" },
                 warning = { "#f7c440" },
@@ -67,6 +68,7 @@ return {
                 hint = { "#66fad5" },
                 test = { "#10B981" },
                 cleanup = { "#8ddb51" },
+                think = { "#87ceeb" },
             },
             search = {
                 command = "rg",
