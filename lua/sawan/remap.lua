@@ -41,7 +41,7 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("n", "<leader>sk", ":lua vim.g.stop_lsp=not vim.g.stop_lsp<cr>", { desc = "toggle lsp" })
+map("n", "<leader>sk", ":lua vim.lsp.enable('clangd', vim.g.stop_lsp) vim.g.stop_lsp=not vim.g.stop_lsp<cr>", { desc = "toggle lsp" })
 
 map("i", "<M-j>", "<Down>")
 map("i", "<M-h>", "<Left>")
