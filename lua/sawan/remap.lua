@@ -48,7 +48,6 @@ map("i", "<M-h>", "<Left>")
 map("i", "<M-k>", "<Up>")
 map("i", "<M-l>", "<Right>")
 
-map("i", "<C-k>", "<C-o>de", { desc = "Delete forward word" })
 map("i", "<C-l>", "<Del>", { desc = "Delete forward characters" })
 
 map("v", "<leader>fu", "y/<C-r>\"\\C", { desc = "search exact selected text" })
