@@ -1,6 +1,7 @@
 return {
     "chentoast/marks.nvim",
     event = "VeryLazy",
+    enabled = false,
     keys = {
         {
             "<leader>mat",
