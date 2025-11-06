@@ -58,7 +58,7 @@ return { -- Autocompletion
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
       preset = 'default',
-      ['<C-v>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      -- ['<C-v>'] = { 'show', 'show_documentation', 'hide_documentation' },
       --['<C-n>'] = { 'show','select_next', 'fallback_to_mappings' },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:

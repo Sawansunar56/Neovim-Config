@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 vim.g.stop_lsp = false
 local map = vim.keymap.set
+-- local is_gui = vim.g.neovide or vim.fn.has("gui_running") == 1
 
 -- Function sections
 local function flatter()
@@ -20,9 +21,14 @@ map("n", "<leader>ce", "<cmd>doautocmd User LazyColorscheme<CR>", { desc = "Enab
 if jit.os ~= "Linux" then
   map("n", "<C-j>", "<C-w>j", { desc = "go to down buffer" })
   map("n", "<C-k>", "<C-w>k", { desc = "go to up buffer" })
-  map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
   map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
+  -- if is_gui then
+    map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
+  -- else
+  --   map("n", "<BS>", "<C-w>h", { desc = "go to left buffer" })
+  -- end
 end
+
 map("n", "<leader>pv", vim.cmd.Ex, { desc = "Go to netrw" })
 -- map("i", "<c-s><cr>", "<c-o>o", { desc = "enter anywhere from the file"})
 map("n", "<Leader><Leader>f", flatter, { desc = "completely removes the background colors" })
@@ -41,7 +47,8 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
-map("n", "<leader>sk", ":lua vim.lsp.enable('clangd', vim.g.stop_lsp) vim.g.stop_lsp=not vim.g.stop_lsp<cr>", { desc = "toggle lsp" })
+map("n", "<leader>sk", ":lua vim.lsp.enable('clangd', vim.g.stop_lsp) vim.g.stop_lsp=not vim.g.stop_lsp<cr>",
+  { desc = "toggle lsp" })
 
 map("i", "<M-j>", "<Down>")
 map("i", "<M-h>", "<Left>")
