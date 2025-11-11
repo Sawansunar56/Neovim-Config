@@ -73,7 +73,7 @@ return {
       builtin.find_files({ cwd = vim.fn.expand('%:p:h') })
     end, { desc = "Search files for current buffer directory" })
 
-    map("n", "<leader>pr", function()
+    map("n", "<leader>pq", function()
       builtin.live_grep({ cwd = vim.fn.expand('%:p:h') })
     end, { desc = "live grep files for current buffer directory" })
 
