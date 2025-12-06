@@ -5,8 +5,8 @@ return {
   keys = {
     { "<leader>ks", function() Snacks.scratch() end,              desc = "Toggle Scratch Buffer" },
     { "<leader>kw", function() Snacks.scratch.select() end,       desc = "Snacks Scratch Buffer" },
-    { "<leader>ka", function() Snacks.picker() end,               desc = "Snacks pickers" },
-    { "<leader>kf", function() Snacks.picker.files() end,               desc = "Snacks files" },
+    { "<leader>ka", function() Snacks.picker() end,               desc = "Snacks everything" },
+    { "<leader>kf", function() Snacks.picker.files() end,         desc = "Snacks files" },
     { "<leader>kt", function() Snacks.picker.todo_comments() end, desc = "Snacks Select todo comments" },
     { "<leader>kr", function() Snacks.picker.resume() end,        desc = "Snacks Resume" },
   },

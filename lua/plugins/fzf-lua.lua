@@ -3,6 +3,7 @@ return {
     lazy = true,
     -- enabled = function() return jit.os == "Linux" end,
     keys = {
+        { "<leader>fn",  "<cmd>FzfLua<cr>",                      desc = "FZF everything" },
         { "<leader>fz",  "<cmd>FzfLua files<cr>",                      desc = "FZF files" },
         { "<leader>fg",  "<cmd>FzfLua git_files<cr>",                  desc = "FZF git files" },
         { "<leader>fo",  "<cmd>FzfLua oldfiles<cr>",                   desc = "FZF old files" },

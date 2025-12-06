@@ -91,14 +91,14 @@ map("n", "<leader>ff", vim.lsp.buf.format)
 -- Things I don't understand
 -- Well, I finally understand. It is related to the quick list and local list
 -- settings of vim. Prime uses it for his reference checking
-map("n", "<A-down>", "<cmd>cnext<CR>zz", { desc = "quickfix next" })
-map("n", "<A-up>", "<cmd>cprev<CR>zz", { desc = "quickfix previous" })
-map("n", "<A-x>", "<cmd>cclose<CR>", { desc = "quickfix close" })
-map("n", "<A-c>", "<cmd>copen<CR>", { desc = "quickfix open" })
-map("n", "<A-v>", "<cmd>lopen<CR>", { desc = "locafix open" })
-map("n", "<A-b>", "<cmd>lclose<CR>", { desc = "locafix close" })
-map("n", "<A-right>", "<cmd>lnext<CR>zz", { desc = "locafix next" })
-map("n", "<A-left>", "<cmd>lprev<CR>zz", { desc = "locafix previous" })
+map("n", "<M-j>", "<cmd>cnext<CR>zz", { desc = "quickfix next" })
+map("n", "<M-k>", "<cmd>cprev<CR>zz", { desc = "quickfix previous" })
+map("n", "<M-x>", "<cmd>cclose<CR>", { desc = "quickfix close" })
+map("n", "<M-c>", "<cmd>copen<CR>", { desc = "quickfix open" })
+map("n", "<M-v>", "<cmd>lopen<CR>", { desc = "locafix open" })
+map("n", "<M-b>", "<cmd>lclose<CR>", { desc = "locafix close" })
+map("n", "<M-l>", "<cmd>lnext<CR>zz", { desc = "locafix next" })
+map("n", "<M-h>", "<cmd>lprev<CR>zz", { desc = "locafix previous" })
 
 -- Everything window related
 map("n", "<Leader>sv", "<C-w>v", { desc = "open split vertically" })   -- vertically splits the screen

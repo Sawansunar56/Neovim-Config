@@ -52,6 +52,7 @@ return {
     { "<leader>ds", "<cmd>Telescope lsp_document_symbols<cr>",          desc = "telescope document symbols" },
     { "<leader>dw", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "telescope dynamic workspace symbols" },
     { "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>",         desc = "telescope workspace symbols" },
+    { "<leader>fj", "<cmd>Telescope builtin<cr>",                       desc = "Telescope everything" },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
