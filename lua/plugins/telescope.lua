@@ -70,6 +70,12 @@ return {
       }
     end
 
+    map("n", "<leader>pb", require "plugins.extras.multi-ripgrep", { desc = "Multi Ripgrep by TJ" })
+    map("n", "<leader>px", function()
+        builtin.live_grep({ additional_args = { '--pcre2' } })
+      end,
+      { desc = "Telescope Pcre2" })
+
     map("n", "<leader>pe", function()
       builtin.find_files({ cwd = vim.fn.expand('%:p:h') })
     end, { desc = "Search files for current buffer directory" })
