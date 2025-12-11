@@ -10,7 +10,7 @@ local function flatter()
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 end
-
+-- Player_State_Something
 map("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay Hints" })
@@ -57,16 +57,16 @@ map("i", "<M-l>", "<Right>")
 
 map("i", "<C-l>", "<Del>", { desc = "Delete forward characters" })
 
+-- greatest shortcut to live by. can't live without it.
+map("i", "<C-f>", function()
+  vim.api.nvim_input("<Left><C-o>dT")
+end)
 map("v", "<leader>fu", "y/<C-r>\"\\C", { desc = "search exact selected text" })
 map("v", "<leader>fo", "y/<C-r>\"", { desc = "search selected text" })
 map("v", "<leader>fi", "y/\\<<C-r>\"\\>", { desc = "search only selected text" })
 map("v", "<leader>fp", "y/\\<<C-r>\"\\>\\C", { desc = "search only exact selected text" })
 map("n", "<leader>fi", "y/\\<\\><left><left>", { desc = "search only selected text" })
 
--- greatest shortcut to live by. can't live without it.
-map("i", "<C-f>", function()
-  vim.api.nvim_input("<Left><C-o>dT")
-end)
 
 map("t", "<C-s>", [[<C-\><C-n>]], { desc = "get out of terminal mode to normal mode" })
 
