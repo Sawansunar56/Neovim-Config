@@ -21,38 +21,10 @@ return {
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        -- -- Jump to the definition of the word under your cursor.
-        -- --  This is where a variable was first declared, or where a function is defined, etc.
-        -- --  To jump back, press <C-t>.
         map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-        --
-        -- -- WARN: This is not Goto Definition, this is Goto Declaration.
-        -- --  For example, in C this would take you to the header.
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-        --
-        -- -- Jump to the implementation of the word under your cursor.
-        -- --  Useful when your language has ways of declaring types without an actual implementation.
-        map('vgi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
         map("K", vim.lsp.buf.hover, "lsp hover")
-        --
-        -- -- Jump to the type of the word under your cursor.
-        -- --  Useful when you're not sure what type a variable is and you want to see
-        -- --  the definition of its *type*, not where it was *defined*.
-        map('go', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
-        --
-        -- -- Rename the variable under your cursor.
-        -- --  Most Language Servers support renaming across files, etc.
-        map('vrn', vim.lsp.buf.rename, '[R]e[n]ame')
-        --
-        -- -- Execute a code action, usually your cursor needs to be on top of an error
-        -- -- or a suggestion from your LSP for this to activate.
-        map('vca', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
-
         map('vws', vim.lsp.buf.workspace_symbol, 'lsp workspace symbol')
-        --
-        -- -- Find references for the word under your cursor.
-        map('vrr', vim.lsp.buf.references, '[G]oto [R]eferences')
-
         map("gl", vim.diagnostic.open_float, "lsp open float")
 
         map('[d', function()
@@ -251,23 +223,24 @@ return {
     }
 
     require("mason").setup({})
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "rust_analyzer",
-        "lua_ls",
-        "gopls",
-        -- "clangd"
-      },
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          -- server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
-      },
-    })
+    require("mason-lspconfig").setup()
+    --   {
+    --   ensure_installed = {
+    --     "rust_analyzer",
+    --     "lua_ls",
+    --     "gopls",
+    --     -- "clangd"
+    --   },
+    --   handlers = {
+    --     function(server_name)
+    --       local server = servers[server_name] or {}
+    --       -- This handles overriding only values explicitly passed
+    --       -- by the server configuration above. Useful when disabling
+    --       -- certain features of an LSP (for example, turning off formatting for ts_ls)
+    --       -- server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+    --       require('lspconfig')[server_name].setup(server)
+    --     end,
+    --   },
+    -- }
   end,
 }
