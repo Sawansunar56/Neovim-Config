@@ -74,7 +74,7 @@ map("t", "<C-s>", [[<C-\><C-n>]], { desc = "get out of terminal mode to normal m
 
 -- This is going to get me cancelled
 map("i", "<C-c>", "<Esc>")
-map("i", "<c-s>l", "<c-o>D", { desc = "delete end to line" })
+-- map("i", "<c-s>l", "<c-o>D", { desc = "delete end to line" })
 
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
