@@ -9,6 +9,7 @@ return {
     { "<leader>kf", function() Snacks.picker.files() end,         desc = "Snacks files" },
     { "<leader>kt", function() Snacks.picker.todo_comments() end, desc = "Snacks Select todo comments" },
     { "<leader>kr", function() Snacks.picker.resume() end,        desc = "Snacks Resume" },
+    { "<leader>kz", function() Snacks.zen() end,                  desc = "Snacks Zen Mode" },
   },
   opts = {
     scratch = {
@@ -25,5 +26,6 @@ return {
     scope = { enabled = false },
     statuscolumn = { enabled = false },
     words = { enabled = false },
+    zen = {},
   }
 }

@@ -20,7 +20,7 @@ return {
     --   vim.cmd('silent! execute "normal! A"')
     -- end
 
-    vim.keymap.set("n", "<leader>vj", "<Plug>(VM-Select-All)<Tab>", { desc = "Vim Multi Select All" })
+    vim.keymap.set("n", "<leader>vj", "<Plug>(VM-Select-All)<Tab>", { desc = "Vim Multi Select All - vn is for search next" })
     vim.keymap.set("n", "<leader>vk", "<Plug>(VM-Start-Regex-Search)", { desc = "Vim multi start regex search" })
     vim.keymap.set("n", "<leader>vl", "<Plug>(VM-Add-Cursor-At-Pos)", { desc = "vim multi add cursor at pos" })
     vim.keymap.set("n", "<leader>vh", "<Plug>(VM-Toggle-Mappings)", { desc = "vim multi toggle mapping" })

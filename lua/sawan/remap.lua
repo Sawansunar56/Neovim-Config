@@ -23,7 +23,7 @@ if jit.os ~= "Linux" then
   map("n", "<C-k>", "<C-w>k", { desc = "go to up buffer" })
   map("n", "<C-l>", "<C-w>l", { desc = "go to right buffer" })
   -- if is_gui then
-    map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
+  map("n", "<C-h>", "<C-w>h", { desc = "go to left buffer" })
   -- else
   --   map("n", "<BS>", "<C-w>h", { desc = "go to left buffer" })
   -- end
@@ -138,3 +138,9 @@ map("v", "<leader><leader>g",
 map("v", "<leader><leader>h",
   [[:s/\(virtual \|static \|inline static \|\)\(\S\+ \)\(.*)\).*/\2className::\3 {\r}<Left><Left><Left><Left><Left><Left><Left><Left><Left>]])
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+if vim.g.neovide then
+  map({ "n", "v" }, "<leader>nva", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+  map({ "n", "v" }, "<leader>nvs", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+  map({ "n", "v" }, "<leader>nvd", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
