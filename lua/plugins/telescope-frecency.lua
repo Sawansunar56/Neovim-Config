@@ -1,5 +1,6 @@
 return {
     "nvim-telescope/telescope-frecency.nvim",
+    -- enabled = false,
     lazy = true,
     keys = {
         { "<leader>fx", ":Telescope frecency theme=dropdown<cr>",               desc = "frecency" },

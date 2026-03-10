@@ -79,8 +79,8 @@ map("i", "<C-c>", "<Esc>")
 -- greatest remap ever
 map("x", "<leader>p", [["_dP]])
 
-map({ "n", "v" }, "<leader>y", [["+y]])
-map("n", "<leader>Y", [["+Y]])
+map({ "n", "v" }, "<leader>yw", [["+y]], { desc = "yank prime" })
+map("n", "<leader>ye", [["+Y]], { desc = "yank prime big y" })
 
 map({ "n", "v" }, "<leader>d", [["_d]])
 

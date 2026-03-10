@@ -26,12 +26,14 @@ opt.wrap = false
 opt.swapfile = false
 opt.backup = false
 if vim.loop.os_uname().sysname == "Windows_NT" then
-    opt.undodir = vim.fn.expand('~/.vim/undodir')
-    vim.g.undotree_DiffCommand = "FC"
-    opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
+  opt.undodir = vim.fn.expand('~/.vim/undodir')
+  vim.g.undotree_DiffCommand = "FC"
+  opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
+  -- opt.guifont = "JetBrainsMono Nerd Font:h12"
 else
-    opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-    opt.guifont = { "JetBrainsMono Nerd Font", ":h11" }
+  opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+  opt.guifont = { "JetBrainsMono Nerd Font", ":h11" }
+  -- opt.guifont = "JetBrainsMono Nerd Font:h11"
 end
 opt.undofile = true
 
@@ -52,9 +54,9 @@ opt.updatetime = 50
 opt.colorcolumn = "80"
 opt.list = true
 opt.listchars = {
-    -- eol = "↲",
-    tab = "  ",
-    nbsp = "☠"
+  -- eol = "↲",
+  tab = "  ",
+  nbsp = "☠"
 }
 
 -- vim.cmd [[
