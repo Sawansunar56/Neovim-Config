@@ -81,6 +81,10 @@ map("x", "<leader>p", [["_dP]])
 
 map({ "n", "v" }, "<leader>yw", [["+y]], { desc = "yank prime" })
 map("n", "<leader>ye", [["+Y]], { desc = "yank prime big y" })
+map({ "n", "v" }, "<leader>yr", [["*y]], { desc = "yank to clipboard" })
+
+map("n", "<leader>yt", [["*Y]], { desc = "yank to clipboard but big y" })
+map("n", "<leader>ys", [["*p]], { desc = "Past From clipboard" })
 
 map({ "n", "v" }, "<leader>d", [["_d]])
 

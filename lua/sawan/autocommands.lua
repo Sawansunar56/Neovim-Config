@@ -17,3 +17,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufEnter" }, {
     vim.opt.filetype = "glsl"
   end,
 })
+
+vim.filetype.add({
+  extension = {
+    xaml = "xml",
+    axaml = "xml"
+  }
+})
